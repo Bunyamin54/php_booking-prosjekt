@@ -42,6 +42,7 @@
    <a href="#" class="d-inline-block mb-3"> 
    <span class="badge bg-light text-dark fs-6 p-2 "> 
     <i class="bi bi-youtube me-1"></i> Youtube
+    <i></i>
    </span>
    </a>
   
