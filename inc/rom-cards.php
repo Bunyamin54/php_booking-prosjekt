@@ -14,16 +14,16 @@
     <div class="features mb-4">
     <h6 class="mb-1">Romdetaljer </h6>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
-     2 Rommenet
+     1 Rommenet
     </span>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
-     2 Bad
+     1 Bad
     </span>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
      1 Balkong
     </span>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
-     3 Sofa
+     1 Sofa
   </span>
     </div>
     
@@ -67,7 +67,7 @@
     <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
     <img src="images/rooms/9.jpg" class="card-img-top" >
     <div class="card-body ">
-    <h5 >Dobbeltrom med balkong</h5>
+    <h5 >Junior Suite med utsikt</h5>
     <h5 class="mb-4">fra NOK 2000 per natt</h5>
     <div class="features mb-4">
     <h6 class="mb-1">Romdetaljer </h6>
@@ -75,13 +75,13 @@
      2 Rommenet
     </span>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
-     2 Bad
+     1 Bad
     </span>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
      1 Balkong
     </span>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
-     3 Sofa
+     1 Sofa
   </span>
     </div>
     
@@ -126,7 +126,7 @@
     <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
     <img src="images/rooms/10.jpg" class="card-img-top" >
     <div class="card-body ">
-    <h5 >Dobbeltrom med utsikt</h5>
+    <h5 >Dobbel familierom</h5>
     <h5 class="mb-4">fra NOK 2500 per natt</h5>
     <div class="features mb-4">
     <h6 class="mb-1">Romdetaljer </h6>
