@@ -10,9 +10,9 @@
     <img src="images/rooms/11.jpeg" class="card-img-top" >
     <div class="card-body ">
     <h5 >Enkeltrom</h5>
-    <h5 class="mb-4">1500kr en natt</h5>
+    <h5 class="mb-4">fra NOK 1500 per natt</h5>
     <div class="features mb-4">
-    <h6 class="mb-1">Funksjoner </h6>
+    <h6 class="mb-1">Romdetaljer </h6>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
      2 Rommenet
     </span>
@@ -68,9 +68,9 @@
     <img src="images/rooms/9.jpg" class="card-img-top" >
     <div class="card-body ">
     <h5 >Dobbeltrom med balkong</h5>
-    <h5 class="mb-4">1500kr en natt</h5>
+    <h5 class="mb-4">fra NOK 2000 per natt</h5>
     <div class="features mb-4">
-    <h6 class="mb-1">Funksjoner </h6>
+    <h6 class="mb-1">Romdetaljer </h6>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
      2 Rommenet
     </span>
@@ -127,9 +127,9 @@
     <img src="images/rooms/10.jpg" class="card-img-top" >
     <div class="card-body ">
     <h5 >Dobbeltrom med utsikt</h5>
-    <h5 class="mb-4">1500kr en natt</h5>
+    <h5 class="mb-4">fra NOK 2500 per natt</h5>
     <div class="features mb-4">
-    <h6 class="mb-1">Funksjoner </h6>
+    <h6 class="mb-1">Romdetaljer </h6>
     <span class="badge text-bg-light text-success mb-3 text-wrap "> 
      2 Rommenet
     </span>

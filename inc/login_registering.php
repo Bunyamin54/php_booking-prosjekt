@@ -28,8 +28,7 @@
   </div>
 </div>
 
-
-<!-- // ? Register Modal -->
+ <!-- //*  Register Modal -->
 
 
 <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">

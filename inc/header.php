@@ -18,7 +18,7 @@
                     <a class="nav-link me-2" href="fasiliteter.php">Fasiliteter</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="#">Kontakt oss</a>
+                    <a class="nav-link me-2" href="kontakt.php">Kontakt oss</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link me-2" href="om.php">Om</a>
