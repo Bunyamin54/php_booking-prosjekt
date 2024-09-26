@@ -3,35 +3,35 @@
           <div class="container-fluid px-lg-4 mt-4">
             <div class="swiper swiper-container">
               <div class="swiper-wrapper">
+                
                 <div class="swiper-slide">
-                  <img src="../php_booking-prosjekt/images/carousel/1.png" class="w-100 d-block" />
+                  <img src="../php_booking-prosjekt/images/carousel/2.png" class="w-100 d-block"style="height: 575px; object-fit: cover;" />
     
                 </div>
                 <div class="swiper-slide">
-                  <img src="../php_booking-prosjekt/images/carousel/2.png" class="w-100 d-block" />
+                  <img src="../php_booking-prosjekt/images/carousel/14.jpg" class="w-100 d-block" style="height: 575px; object-fit: cover;" />
+                </div>
+              
+                <div class="swiper-slide">
+                  <img src="../php_booking-prosjekt/images/carousel/13.jpg" class="w-100 d-block" style="height: 575px; object-fit: cover;" />
+                </div>
+                
+                <div class="swiper-slide">
+                  <img src="../php_booking-prosjekt/images/carousel/4.jpeg" class="w-100 d-block"style="height: 575px; object-fit: cover;"/>
+                </div>
+                
+                <div class="swiper-slide">
+                  <img src="../php_booking-prosjekt/images/carousel/7.jpeg" class="w-100 d-block"style="height: 575px; object-fit: cover;"/>
                 </div>
                 <div class="swiper-slide">
-                  <img src="../php_booking-prosjekt/images/carousel/3.png" class="w-100 d-block" />
+                  <img src="../php_booking-prosjekt/images/carousel/9.jpeg" class="w-100 d-block"style="height: 575px; object-fit: cover;"/>
                 </div>
                 <div class="swiper-slide">
-                  <img src="../php_booking-prosjekt/images/carousel/4.png" class="w-100 d-block" />
+                  <img src="../php_booking-prosjekt/images/carousel/10.jpeg" class="w-100 d-block"style="height: 575px; object-fit: cover;"/>
                 </div>
-                <div class="swiper-slide">
-                  <img src="../php_booking-prosjekt/images/carousel/5.png" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="../php_booking-prosjekt/images/carousel/6.png" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="../php_booking-prosjekt/images/carousel/7.png" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="../php_booking-prosjekt/images/carousel/8.png" class="w-100 d-block" />
-                </div>
-                <div class="swiper-slide">
-                  <img src="../php_booking-prosjekt/images/carousel/9.png" class="w-100 d-block" />
-                </div>
-
+                
+                
+               
 
               </div>
             </div>
