@@ -71,8 +71,7 @@
     });
 
 
-    <
-    !--Initialize Swiper-- >
+    // < !--Initialize Swiper-- >
 
     var swiper = new Swiper(".swiper-anmeldelser", {
       effect: "coverflow",

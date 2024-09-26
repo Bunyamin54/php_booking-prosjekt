@@ -4,7 +4,7 @@
             <div class="swiper swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <img src=" ../php_booking-prosjekt/images/carousel/1.png" class="w-100 d-block" />
+                  <img src="../php_booking-prosjekt/images/carousel/1.png" class="w-100 d-block" />
     
                 </div>
                 <div class="swiper-slide">
