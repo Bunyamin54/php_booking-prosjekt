@@ -21,9 +21,10 @@
 
 <body class="bg-light">
 
-    
+      <?php require_once './/inc/header.php'; ?>
+      <!-- <?php require_once './/inc/login_registering.php'; ?> -->
 
-  <?php require_once './/inc/header.php'; ?>
+  <!-- <?php require_once './/inc/fasiliteter.php'; ?> -->
 
 
   <div class="my-5 px-4">
