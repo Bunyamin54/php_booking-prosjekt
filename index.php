@@ -18,8 +18,9 @@
 
   require_once './/inc/header.php';
 
-  
-  include './components/hjem.php';
+  require_once './/inc/hjem.php';
+
+
   include './components/availability-form.php';
   include './components/rom-cards.php';
   include './components/fasiliteter.php';
