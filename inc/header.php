@@ -12,7 +12,7 @@
                     <a class="nav-link active me-2" aria-current="page" href="index.php">Hjem</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="#">Rom</a>
+                    <a class="nav-link me-2" href="rom.php">Rom</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link me-2" href="fasiliteter.php">Fasiliteter</a>
