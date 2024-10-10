@@ -31,8 +31,9 @@
     border:1px solid  var(--teal);
 
  }
+
  .custom-bg:hover{
-    background-color: var(--teal_hover)
+    background-color: var(--teal_hover);
     border-color: var(--teal_hover);  
  }
 
@@ -83,3 +84,10 @@
    height: 1,7px;
 
   } 
+
+  .custom-alert {
+    position: fixed;
+    top:25px;
+    right: 25px;
+
+  }
