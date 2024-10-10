@@ -4,7 +4,7 @@
 
    session_start();
    session_destroy();
-    redirect('index.php');
+    redirect('../public/index.php');
     
 
 
