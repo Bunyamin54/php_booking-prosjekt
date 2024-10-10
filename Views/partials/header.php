@@ -9,19 +9,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active me-2" aria-current="page" href="index.php">Hjem</a>
+                    <a class="nav-link active me-2" aria-current="page" href="../../public/index.php">Hjem</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="rom.php">Rom</a>
+                    <a class="nav-link me-2" href="../users/rom.php">Rom</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="fasiliteter.php">Fasiliteter</a>
+                    <a class="nav-link me-2" href="../users/fasiliteter.php">Fasiliteter</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="kontakt.php">Kontakt oss</a>
+                    <a class="nav-link me-2" href="../users/kontakt.php">Kontakt oss</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link me-2" href="om.php">Om</a>
+                    <a class="nav-link me-2" href="../users/om.php">Om</a>
                 </li>
             </ul>
             <div class="d-flex">

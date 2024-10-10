@@ -8,7 +8,8 @@
             <div class="swiper-slide bg-white p-4">
                 <div class="profile d-flex align-items-center p-4">
 
-                    <img src="../images/image/images(1).jpeg" width="30px">
+                <img src="../../public/images/image/images(1).jpeg" width="30px">
+
 
                     <h6 class="m-0 ms-2">Random user1</h6>
 
@@ -28,7 +29,8 @@
             <div class="swiper-slide bg-white p-4">
                 <div class="profile d-flex align-items-center p-4">
 
-                    <img src="../images/image/images(1).jpeg" width="30px">
+                <img src="../../public/images/image/images(1).jpeg" width="30px">
+
 
                     <h6 class="m-0 ms-2">Random user1</h6>
 
@@ -48,7 +50,7 @@
             <div class="swiper-slide bg-white p-4">
                 <div class="profile d-flex align-items-center mb-3">
 
-                    <img src="../images/image/images(1).jpeg" width="30px">
+                <img src="../../public/images/image/images(1).jpeg" width="30px">
 
                     <h6 class="m-0 ms-2">Random user1</h6>
 

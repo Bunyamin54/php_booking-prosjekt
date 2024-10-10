@@ -1,13 +1,11 @@
 <?php 
 
-  require('inc/essentials.php');
+  require('../Helpers/Utils.php');
 
    adminLogin();
 
 
 ?>
-
-
 
 
 
@@ -19,7 +17,7 @@
     , initial-scale=1.0">
     <title>Admin Panel - Dashboard </title>
 
-    <?php require('inc/links.php'); ?>
+    <?php require('../Views/partials/links.php'); ?>
 </head>
 <body class="bg-light">
     
@@ -34,6 +32,6 @@
 
 
 
- <?php require('inc/script.php'); ?>
+ <?php require('../public/js/script.php'); ?>
 </body>
 </html>
