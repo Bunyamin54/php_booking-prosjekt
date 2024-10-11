@@ -7,7 +7,7 @@
     <div class="col-lg-4 col-md-6 my-3">
     
     <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-    <img src="../../public/images/rooms/11.jpeg" class="card-img-top" >
+    <img src="./images/rooms/11.jpeg" class="card-img-top" >
     <div class="card-body ">
     <h5 >Enkeltrom</h5>
     <h5 class="mb-4">fra NOK 1500 per natt</h5>
@@ -65,7 +65,7 @@
 <div class="col-lg-4 col-md-6 my-3">
     
     <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-    <img src="../../public/images/rooms/9.jpg" class="card-img-top" >
+    <img src="./images/rooms/9.jpg" class="card-img-top" >
     <div class="card-body ">
     <h5 >Junior Suite med utsikt</h5>
     <h5 class="mb-4">fra NOK 2000 per natt</h5>
@@ -124,7 +124,7 @@
 <div class="col-lg-4 col-md-6 my-3">
     
     <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-    <img src="../../public/images/rooms/10.jpg" class="card-img-top" >
+    <img src="./images/rooms/10.jpg" class="card-img-top" >
     <div class="card-body ">
     <h5 >Dobbel familierom</h5>
     <h5 class="mb-4">fra NOK 2500 per natt</h5>

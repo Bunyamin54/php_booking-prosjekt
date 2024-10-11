@@ -8,7 +8,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
   <link rel="stylesheet" href="../../public/css/styles.css">
-  <?php require_once '../partials/links.php'; ?>
+  <?php require_once '../../partials/links.php'; ?>
+
   <style>
     .pop:hover{
        border-top-color: var(--teal) !important;
