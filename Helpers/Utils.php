@@ -6,14 +6,15 @@
         if(!(isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
 
        
-            echo"<script> window.location.href = '../../public/index.php';
+            echo"<script> window.location.href = '../public/index.php';
             </script>";
+          
     }
-
+ 
     session_regenerate_id(true);
 
-
-    }
+ 
+    } 
 
  function redirect($url) {
      
@@ -21,8 +22,8 @@
   window.location.href='$url';
   </script>";
 
-}
-
+} 
+ 
 function alert($type, $message) {
      $bs_class = ($type == "success") ? "alert-success" : "alert-danger";
     echo <<<alert

@@ -21,8 +21,16 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login Panel </title>
+
   <?php require('../Views/partials/links.php'); ?>
+  <link rel="stylesheet" href="../public/css/styles.css">
+
+ 
+  <title>Admin Login Panel </title>
+  
+ 
+  
+
   <style>
     div.login-form {
       position: absolute;
@@ -55,7 +63,7 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
         </div>
 
         <button name="login" type="submit" class="btn text-white custom-bg shadow-none">Login</button>
-
+       
       </div>
 
 

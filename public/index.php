@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UIA Motel</title>
-  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="../public/css/styles.css">
   <?php require_once '../Views/partials/links.php'; ?> 
 </head>
 
