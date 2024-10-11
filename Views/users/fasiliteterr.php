@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
   <link rel="stylesheet" href="../../public/css/styles.css">
-  <?php require_once '../../partials/links.php'; ?>
+  <?php require_once '../partials/links.php'; ?>
 
   <style>
     .pop:hover{
@@ -23,7 +23,7 @@
 <body class="bg-light">
 
       <?php require_once '../partials/header.php'; ?>
-      <!-- <?php require_once './login_registering.php'; ?> -->
+      <!-- <?php require_once 'login_registering.php'; ?> -->
 
   <!-- <?php require_once './fasiliteter.php'; ?> -->
 

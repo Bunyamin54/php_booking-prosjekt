@@ -14,8 +14,11 @@
                 <li class="nav-item">
                     <a class="nav-link me-2" href="/php_booking-prosjekt/Views/users/rom.php">Rom</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link me-2" href="/php_booking-prosjekt/Views/users/fasiliteter.php">Fasiliteter</a>
+                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link me-2" href="/php_booking-prosjekt/Views/users/fasiliteterr.php">Fasiliteter</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link me-2" href="/php_booking-prosjekt/Views/users/kontakt.php">Kontakt oss</a>
