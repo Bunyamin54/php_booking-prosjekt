@@ -76,7 +76,8 @@ adminLogin();
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
-                <button type="button" class="btn custom-bg text-white shadow-none">Send inn</button>
+                <button type="button" class="btn" style="background-color: var(--teal); color: white; border: 1px solid var(--teal);">Send inn</button>
+
 
 
               </div>
