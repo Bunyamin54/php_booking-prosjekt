@@ -7,8 +7,9 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-  <link rel="stylesheet" href="css/styles.css">
-  <?php require_once './/inc/links.php'; ?>
+  <link rel="stylesheet" href="../../public/css/styles.css">
+  <?php require_once '../partials/links.php'; ?>
+
   <style>
     .pop:hover{
        border-top-color: var(--teal) !important;
@@ -21,10 +22,10 @@
 
 <body class="bg-light">
 
-      <?php require_once './/inc/header.php'; ?>
-      <!-- <?php require_once './/inc/login_registering.php'; ?> -->
+      <?php require_once '../partials/header.php'; ?>
+      <!-- <?php require_once 'login_registering.php'; ?> -->
 
-  <!-- <?php require_once './/inc/fasiliteter.php'; ?> -->
+  <!-- <?php require_once './fasiliteter.php'; ?> -->
 
 
   <div class="my-5 px-4">
@@ -43,7 +44,7 @@
    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
     <div class="d-flex align-items-center mb-2">
 
-    <img src="images/fasilitetsvg/wifi.svg" width="40px">
+    <img src="../../public/images/fasilitetsvg/wifi.svg" width="40px">
     <h5 class="m-0 ms-3">Wi-fi</h5>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fuga soluta corporis illum tempora distinctio minima?</p> 
@@ -54,7 +55,7 @@
    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
     <div class="d-flex align-items-center mb-2">
 
-    <img src="images/fasilitetsvg/utensils-solid.svg" width="40px">
+    <img src="../../public/images/fasilitetsvg/utensils-solid.svg" width="40px">
     <h5 class="m-0 ms-3">Mat og Drikke</h5>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fuga soluta corporis illum tempora distinctio minima?</p> 
@@ -65,7 +66,7 @@
    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
     <div class="d-flex align-items-center mb-2">
 
-    <img src="images/fasilitetsvg/mug-saucer-solid.svg" width="40px">
+    <img src="../../public/images/fasilitetsvg/mug-saucer-solid.svg" width="40px">
     <h5 class="m-0 ms-3">Frokost</h5>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fuga soluta corporis illum tempora distinctio minima?</p> 
@@ -76,7 +77,7 @@
    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
     <div class="d-flex align-items-center mb-2">
 
-    <img src="images/fasilitetsvg/person-swimming-solid.svg" width="40px">
+    <img src="../../public/images/fasilitetsvg/person-swimming-solid.svg" width="40px">
     <h5 class="m-0 ms-3">Svømme</h5>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fuga soluta corporis illum tempora distinctio minima?</p> 
@@ -88,7 +89,7 @@
    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
     <div class="d-flex align-items-center mb-2">
 
-    <img src="images/fasilitetsvg/heart-regular.svg" width="40px">
+    <img src="../../public/images/fasilitetsvg/heart-regular.svg" width="40px">
     <h5 class="m-0 ms-3">Fitness</h5>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fuga soluta corporis illum tempora distinctio minima?</p> 
@@ -100,7 +101,7 @@
    <div class="bg-white rounded shadow p-4 border-top border-4 border-dark pop">
     <div class="d-flex align-items-center mb-2">
 
-    <img src="images/fasilitetsvg/basketball-solid.svg" width="40px">
+    <img src="../../public/images/fasilitetsvg/basketball-solid.svg" width="40px"> 
     <h5 class="m-0 ms-3">Basketball</h5>
     </div>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur fuga soluta corporis illum tempora distinctio minima?</p> 
@@ -116,7 +117,7 @@
   </div>
 
 
-<?php require_once './/inc/footer.php'; ?>
+<?php require_once '../partials/footer.php'; ?>
 
 
   

@@ -7,8 +7,8 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
-  <link rel="stylesheet" href="css/styles.css">
-  <?php require_once './/inc/links.php'; ?>
+  <link rel="stylesheet" href="../../public/css/styles.css">
+  <?php require_once '../partials/links.php'; ?>
   <style>
     .box{
        border-top-color: var(--teal) !important;
@@ -22,7 +22,7 @@
 
     
 
-   <?php require_once './/inc/header.php'; ?>
+   <?php require_once '../partials/header.php'; ?>
 
 
   <div class="my-5 px-4">
@@ -43,7 +43,7 @@
     cumque ipsa.</p>
     </div>
     <div class="col-lg-5 col-md-5 mb-4 order-lg-2 order-md-2 order-1">
-      <img src="images/about/about.jpg" class="w-100">
+      <img src="../../public/images/about/about.jpg" class="w-100">
     </div>
   </div>
 </div>
@@ -52,25 +52,25 @@
   <div class="row">
     <div class="col-lg-3 col-md-6 mb-4 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-      <img src="images/about/hotel.svg" width="70px">
+      <img src="../../public/images/about/hotel.svg" width="70px">
       <hi class="mt-3">100+ ROOMS</hi>
       </div>
     </div>
     <div class="col-lg-3 col-md-6 mb-4 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-      <img src="images/about/customers.svg" width="70px">
+      <img src="../../public/images/about/customers.svg" width="70px">
       <hi class="mt-3">200+ CUSTOMERS</hi>
       </div>
     </div>
     <div class="col-lg-3 col-md-6 mb-4 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-      <img src="images/about/rating.svg" width="70px">
+      <img src="../../public/images/about/rating.svg" width="70px">
       <hi class="mt-3">100+ REVIEWS</hi>
       </div>
     </div>
     <div class="col-lg-3 col-md-6 mb-4 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
-      <img src="images/about/hotel.svg" width="70px">
+      <img src="../../public/images/about/hotel.svg" width="70px">
       <hi class="mt-3">100+ ROOMS</hi>
       </div>
     </div>
@@ -81,19 +81,19 @@
   <div class="swiper mySwiper">
     <div class="swiper-wrapper mb-5">
       <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-        <img src="images/about/staff.svg" class="w-100">
+        <img src="../../public/images/about/staff.svg" class="w-100">
         <h5 class="mt-2">Random Name</h5>
       </div>
       <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-        <img src="images/about/staff.svg" class="w-100">
+        <img src="../../public/images/about/staff.svg" class="w-100">
         <h5 class="mt-2">Random Name</h5>
       </div>
       <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-        <img src="images/about/staff.svg" class="w-100">
+        <img src="../../public/images/about/staff.svg" class="w-100">
         <h5 class="mt-2">Random Name</h5>
       </div>
       <div class="swiper-slide bg-white text-center overflow-hidden rounded">
-        <img src="images/about/staff.svg" class="w-100">
+        <img src="../../public/images/about/staff.svg" class="w-100">
         <h5 class="mt-2">Random Name</h5>
       </div>
       
@@ -103,7 +103,7 @@
   </div>
 
   </div>
-<?php require_once './/inc/footer.php'; ?>
+<?php require_once '../partials/footer.php'; ?>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <!-- Initialize Swiper -->

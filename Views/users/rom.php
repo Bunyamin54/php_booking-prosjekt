@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="css/styles.css">
-  <?php require_once './/inc/links.php'; ?>
+  <link rel="stylesheet" href="../../public/css/styles.css">
+  <?php require_once '../partials/links.php'; ?>
   <style>
     .pop:hover {
       border-top-color: var(--teal) !important;
@@ -38,7 +38,7 @@
 
 <body class="bg-light">
 
-  <?php require_once './/inc/header.php'; ?>
+  <?php require_once '../partials/header.php'; ?>
 
 
   <div class="my-5 px-4">
@@ -116,7 +116,7 @@
             <!-- İlk Oda -->
             <div class="col-lg-4 col-md-6">
               <div class="card border-0 shadow room-card">
-                <img src="images/rooms/11.jpeg" class="card-img-top">
+                <img src="../../public/images/rooms/11.jpeg" class="card-img-top">
                 <div class="card-body">
                   <h5>Enkeltrom</h5>
                   <h5 class="mb-4">fra NOK 1500 per natt</h5>
@@ -151,10 +151,10 @@
               </div>
             </div>
 
-            <!-- İkinci Oda -->
+            
             <div class="col-lg-4 col-md-6">
               <div class="card border-0 shadow room-card">
-                <img src="images/rooms/9.jpg" class="card-img-top">
+                <img src="../../public/images/rooms/9.jpg" class="card-img-top">
                 <div class="card-body">
                   <h5>Junior Suite med utsikt</h5>
                   <h5 class="mb-4">fra NOK 2000 per natt</h5>
@@ -189,10 +189,10 @@
               </div>
             </div>
 
-            <!-- Üçüncü Oda -->
+         
             <div class="col-lg-4 col-md-6">
               <div class="card border-0 shadow room-card">
-                <img src="images/rooms/10.jpg" class="card-img-top">
+                <img src="../../public/images/rooms/10.jpg" class="card-img-top">
                 <div class="card-body">
                   <h5>Dobbel familierom</h5>
                   <h5 class="mb-4">fra NOK 2500 per natt</h5>
@@ -238,7 +238,7 @@
     </div>
   </div>
 
-  <?php require_once './/inc/footer.php'; ?>
+  <?php require_once '../partials/links.php'; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+AMvbq1zM1F1zRh7VKH+8abu0qmr8" crossorigin="anonymous"></script>
 
