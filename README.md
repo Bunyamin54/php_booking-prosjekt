@@ -44,3 +44,71 @@ PHP:
 Minimum PHP versjon 8.0 eller høyere.
 Database:
 MySQL eller MariaDB for å lagre bruker- og bookingdata.
+
+
+
+# Room Booking System
+
+## .vscode/
+│   └── Konfigurasjonsfiler for Visual Studio Code
+
+## Config/
+│   └── Database.php
+
+## Controllers/
+│   ├── admin-header.php
+│   ├── dashboard.php
+│   ├── instillinger.php
+│   ├── loggut.php
+│   └── login.php
+
+## Helpers/
+│   └── Utils.php
+
+## Models/
+│   ├── BookingModel.php
+│   ├── RoomModel.php
+│   └── UserModel.php
+
+## node_modules/
+│   └── Node.js-moduler (hvis aktuelt)
+
+## public/
+│   ├── css/
+│   │   └── styles.css
+│   ├── images/
+│   │   ├── about/
+│   │   ├── carousel/
+│   │   ├── fasilitetsvg/
+│   │   └── rooms/
+│   └── js/
+│       ├── script.php
+│       └── index.php
+
+## Views/
+│   ├── partials/
+│   │   ├── footer.php
+│   │   ├── header.php
+│   │   └── links.php
+│   └── users/
+│       ├── adressen-var.php
+│       ├── anmeldelser.php
+│       ├── availability-form.php
+│       ├── fasiliteter.php
+│       ├── hjem.php
+│       ├── kontakt.php
+│       ├── login_registering.php
+│       ├── om.php
+│       ├── rom-cards.php
+│       └── rom.php
+
+## ajax/
+│   ├── check-availability.php
+│   └── get-room-details.php
+
+## assets/
+│   ├── css/
+│   ├── js/
+│   └── images/
+
+## README.md
