@@ -49,56 +49,65 @@
       <div class="row">
 
         <!-- Sol taraf: Checkbox ve Filtre -->
-        <div class="col-lg-3 col-md-12 mb-4">
-          <nav class="navbar navbar-expand-lg bg-body-tertiary rounded shadow">
-            <div class="container-fluid flex-lg-column align-items-stretch">
-              <a class="navbar-brand" href="#">Filtreler</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#filterDropdown" aria-controls="filterDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="filterDropdown">
-                <div class="border bg-light p-3 rounded mb-3">
-                  <h5 class="mb-3" style="font-size: 18px;">Check Availability</h5>
-                  <label class="form-label">Check-in</label>
-                  <input type="date" class="form-control shadow-none mb-3">
-                  <label class="form-label">Check-out</label>
-                  <input type="date" class="form-control shadow-none">
-                  <div class="border bg-light p-3 rounded mb-3 mt-3">
-                    <h5 class="mb-3" style="font-size: 18px;">Facilities</h5>
+        <nav class="navbar navbar-expand-lg navbar-dark rounded shadow">
+    <div class="container-fluid flex-lg-column align-items-stretch">
+      <a class="navbar-brand" href="#">Filtre</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#filterDropdown" aria-controls="filterDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-                    <div class="form-check">
-                      <input type="checkbox" id="f1" class="form-check-input shadow-none me-1">
-                      <label class="form-check-label" for="f1">Facility en</label>
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" id="f2" class="form-check-input shadow-none me-1">
-                      <label class="form-check-label" for="f2">Facility to</label>
-                    </div>
-                    <div class="form-check">
-                      <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
-                      <label class="form-check-label" for="f3">Facility tre</label>
-                    </div>
+      <!-- Collapsible content for Filters -->
+      <div class="collapse navbar-collapse" id="filterDropdown">
+        <!-- White Card for Availability Section -->
+        <div class="border bg-light p-3 rounded mb-3">
+          <h5 class="mb-3" style="font-size: 18px;">Sjekk tilgjengelighet</h5>
 
-                  </div>
+          <!-- Sjekk-inn Date Picker -->
+          <label class="form-label">Sjekk-inn</label>
+          <input type="date" class="form-control shadow-none mb-3" id="checkInDatePicker">
 
-                  <div class="border bg-light p-3 rounded mb-3">
-                    <h5 class="mb-3" style="font-size: 18px;">Gjest</h5>
-                    <div class="d-flex justify-content-between">
-                      <div class="me-3 flex-grow-1">
-                        <label class="form-label">Adults</label>
-                        <input type="number" class="form-control shadow-none">
-                      </div>
-                      <div class="flex-grow-1">
-                        <label class="form-label">Children</label>
-                        <input type="number" class="form-control shadow-none">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </nav>
+          <!-- Sjekk-ut Date Picker -->
+          <label class="form-label">Sjekk-ut</label>
+          <input type="date" class="form-control shadow-none" id="checkOutDatePicker">
         </div>
+
+        <!-- White Card for Facilities Section -->
+        <div class="border bg-light p-3 rounded mb-3 mt-3">
+          <h5 class="mb-3" style="font-size: 18px;">Fasiliteter</h5>
+
+          <div class="form-check">
+            <input type="checkbox" id="f1" class="form-check-input shadow-none me-1">
+            <label class="form-check-label" for="f1">Fasilitet en</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="f2" class="form-check-input shadow-none me-1">
+            <label class="form-check-label" for="f2">Fasilitet to</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
+            <label class="form-check-label" for="f3">Fasilitet tre</label>
+          </div>
+        </div>
+
+        <!-- White Card for Guests Section -->
+        <div class="border bg-light p-3 rounded mb-3">
+          <h5 class="mb-3" style="font-size: 18px;">Gjester</h5>
+          <div class="d-flex justify-content-between">
+            <div class="me-3 flex-grow-1">
+              <label class="form-label">Voksen</label>
+              <input type="number" class="form-control shadow-none">
+            </div>
+            <div class="flex-grow-1">
+              <label class="form-label">Barn</label>
+              <input type="number" class="form-control shadow-none">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</div>
 
         <!-- Sağ taraf: Oda Kartları -->
         <div class="col-lg-9 col-md-12">
