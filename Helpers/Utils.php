@@ -1,7 +1,11 @@
 <?php
 
+  // ? Funksjon for å sjekke om administratoren er logget inn 
+
+
   function adminLogin()  
     {
+        //? Hvis ikke logget inn, blir brukeren omdirigert til innloggingssiden via JavaScript
         session_start();
         if(!(isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
 
@@ -16,6 +20,8 @@
  
     } 
 
+  //  ? Funksjon for å omdirigere brukeren til en annen side
+
  function redirect($url) {
      
   echo "<script>
@@ -24,6 +30,8 @@
 
 } 
  
+   // ? Funksjon for å vise en melding
+
 function alert($type, $message) {
      $bs_class = ($type == "success") ? "alert-success" : "alert-danger";
     echo <<<alert

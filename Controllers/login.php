@@ -1,11 +1,14 @@
 <?php
 
+   // ? Definerer databaseforbindelsesdetaljer
+
 require('../Config/Database.php');
 require('../Helpers/Utils.php');
 
 session_start();
 
 
+  // ? Definerer en funksjon for å filtrere og rense data fra skjemaer
 
 if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
 
@@ -48,6 +51,9 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
   <div class="login-form text-center rounded bg-white shadow overflow-hidden">
     <form method="POST">
 
+
+      // ? Admin Login Panel
+
       <h4 class="bg-dark text-white py-3 ">Admin Login Panel</h4>
 
       <div class="p-4">
@@ -74,16 +80,22 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
 
   <?php
 
+
+  // ? Definerer en funksjon for å filtrere og rense data fra skjemaer
+
   if(isset($_POST['login'])) {
 
 
     $frm_data = filteration($_POST);
 
   
+    // ? Definerer en SQL-spørring for å hente admininformasjon fra databasen
+
     $query = "SELECT * FROM `admin_cred` WHERE `admin_name` = ? AND `admin_pass` = ?";
     $values = [$frm_data['admin_name'], $frm_data['admin_pass']];
 
-   
+      // ? Kjører en SELECT-spørring mot databasen
+
     $result = select($query,$values,"ss");
     if ($result->num_rows==1) {
       $row = mysqli_fetch_assoc($result);
@@ -92,7 +104,8 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
       redirect('dashboard.php');
 
     } 
-    else {
+     // !  Viser en feilmelding hvis admininformasjonen er ugyldig
+    else {  
       alert('error', 'Login Failed - Invalid Credentials!');
     }
   }
@@ -103,7 +116,7 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
 
 
 
-
+  // * Inkluderer script.php for å hente script-innholdet
 
   <?php require('../public/js/script.php'); ?>
 

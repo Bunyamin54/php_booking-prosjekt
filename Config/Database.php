@@ -1,17 +1,24 @@
 
 <?php
 
+// * Definerer databaseforbindelsesdetaljer  
 
 $hostname = "localhost";
 $username = "root";
 $password = "";
 $dbname = "hotelprosjekt";
 
+//* Oppretter en forbindelse til databasen ved hjelp av mysqli_connect()
+
 $con = mysqli_connect($hostname, $username, $password, $dbname);
+
+//? Sjekker om tilkoblingen til databasen er vellykket
 
 if (!$con) {
     die("Connection failed , cannot connect to Database: " . mysqli_connect_error());
 }
+
+  // *  Definerer en funksjon for å filtrere og rense data fra skjemaer
 
 function filteration($data){
 
@@ -24,10 +31,13 @@ $data[$key] = strip_tags($value);
  return $data;
 }
 
+ // * Definerer en funksjon for å kjøre SELECT-spørringer mot databasen
+
 function select($sql, $values, $datatypes)
 
 
-{
+{   // * Henter den globale variabelen $con 
+    
     $con = $GLOBALS['con'];
     if ($stmt = mysqli_prepare($con, $sql)) 
     {

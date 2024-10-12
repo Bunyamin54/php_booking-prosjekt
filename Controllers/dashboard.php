@@ -1,5 +1,7 @@
 <?php
 
+  // ? Definerer databaseforbindelsesdetaljer
+
 require('../Helpers/Utils.php');
 
 adminLogin();
@@ -17,16 +19,22 @@ adminLogin();
   <meta name="viewport" content="width=
     , initial-scale=1.0">
 
+
+    
   <title>Admin Panel - Dashboard </title>
   <link rel="stylesheet" href="../public/css/styles.css">
 
+
+   // ? Inkluderer head.php for å hente head-innholdet
 
   <?php require('../Views/partials/links.php'); ?>
 
 </head>
 
 <body class="bg-light">
-hp
+  
+  // ? Inkluderer admin-header.php for å hente admin-header-innholdet
+
   <?php require('./admin-header.php'); ?>
   <div class="container-fluid" id="main-content">
     <div class="row">
@@ -37,6 +45,9 @@ hp
       </div>
     </div>
   </div>
+
+
+    // ? Inkluderer script.php for å hente script-innholdet
 
   <?php require('../public/js/script.php'); ?>
 </body>
