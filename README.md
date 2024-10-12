@@ -49,31 +49,32 @@ MySQL eller MariaDB for å lagre bruker- og bookingdata.
 
 # Room Booking System
 
-## .vscode/
+```plaintext
+.vscode/
 │   └── Konfigurasjonsfiler for Visual Studio Code
 
-## Config/
+Config/
 │   └── Database.php
 
-## Controllers/
+Controllers/
 │   ├── admin-header.php
 │   ├── dashboard.php
 │   ├── instillinger.php
 │   ├── loggut.php
 │   └── login.php
 
-## Helpers/
+Helpers/
 │   └── Utils.php
 
-## Models/
+Models/
 │   ├── BookingModel.php
 │   ├── RoomModel.php
 │   └── UserModel.php
 
-## node_modules/
+node_modules/
 │   └── Node.js-moduler (hvis aktuelt)
 
-## public/
+public/
 │   ├── css/
 │   │   └── styles.css
 │   ├── images/
@@ -85,7 +86,7 @@ MySQL eller MariaDB for å lagre bruker- og bookingdata.
 │       ├── script.php
 │       └── index.php
 
-## Views/
+Views/
 │   ├── partials/
 │   │   ├── footer.php
 │   │   ├── header.php
@@ -102,13 +103,14 @@ MySQL eller MariaDB for å lagre bruker- og bookingdata.
 │       ├── rom-cards.php
 │       └── rom.php
 
-## ajax/
+ajax/
 │   ├── check-availability.php
 │   └── get-room-details.php
 
-## assets/
+assets/
 │   ├── css/
 │   ├── js/
 │   └── images/
 
-## README.md
+README.md
+
