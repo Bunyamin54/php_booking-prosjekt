@@ -23,7 +23,7 @@
       margin: 15px;
     }
 
-    /* Checkboksları sola dayalı tutmak için */
+
     .form-check {
       display: flex;
       align-items: center;
@@ -48,7 +48,7 @@
     <div class="container">
       <div class="row">
 
-        <!-- Sol taraf: Checkbox ve Filtre -->
+      
         <div class="col-lg-3 col-md-12 mb-4">
           <nav class="navbar navbar-expand-lg bg-body-tertiary rounded shadow">
             <div class="container-fluid flex-lg-column align-items-stretch">
@@ -100,11 +100,11 @@
           </nav>
         </div>
 
-        <!-- Sağ taraf: Oda Kartları -->
+          
         <div class="col-lg-9 col-md-12">
           <div class="row justify-content-center">
 
-            <!-- İlk Oda -->
+          
             <div class="col-lg-4 col-md-6">
               <div class="card border-0 shadow room-card">
                 <img src="../../public/images/rooms/11.jpeg" class="card-img-top">
