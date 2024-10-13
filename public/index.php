@@ -5,6 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UIA Motel</title>
+
+     <!-- //? Linking CSS files --> 
+
   <link rel="stylesheet" href="../public/css/styles.css">
   <?php require_once '../Views/partials/links.php'; ?> 
 </head>
@@ -13,7 +16,9 @@
 
   <?php
 
-  // ? Include the components
+      
+   // ? Include the components from different view files
+
   require_once '../Views/partials/header.php';
   require_once '../Views/users/hjem.php';
   require_once '../Views/users/availability-form.php';
@@ -26,6 +31,8 @@
 
   ?>
 
+    <!-- //? Linking JavaScript files -->
+     
   <?php require_once './js/script.php'; ?>  
 
 </body>

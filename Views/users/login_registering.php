@@ -2,6 +2,8 @@
 <!--  //? Login Modal -->
 
 
+<!--  // ? Added login modal for user authentication -->
+
 <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -28,7 +30,10 @@
   </div>
 </div>
 
+<!--  //? Added registration modal with form fields for user details -->
  <!-- //*  Register Modal -->
+
+
 
 
 <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
