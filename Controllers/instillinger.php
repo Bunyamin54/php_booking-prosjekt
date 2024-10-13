@@ -60,8 +60,8 @@ adminLogin();
 
           </div>
         </div>
-
-
+           
+              <!-- // * Generel Instillinger Model-->
         <div class="modal fade" id="general-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
             <form>
@@ -72,7 +72,14 @@ adminLogin();
                
               </div>
               <div class="modal-body">
-                ...
+                <div class="mb-3">
+                 <label class="form-label">Nettsteds tittel</label>
+                 <input  type="text" name="site_title" class="form-control shadow-none">
+                 </div>
+                 <div class="mb-3">
+                 <label class="form-label">Om Oss</label>
+                 <textarea name="site_about"  class="form-control shadow-none" rows="6"></textarea>
+                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
