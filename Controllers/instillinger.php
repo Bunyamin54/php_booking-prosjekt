@@ -29,7 +29,7 @@ adminLogin();
 </head>
 
 <body class="bg-light">
-  hp
+  
   <?php require('./admin-header.php'); ?>
   <div class="container-fluid" id="main-content">
     <div class="row">

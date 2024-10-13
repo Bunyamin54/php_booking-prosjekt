@@ -25,7 +25,7 @@ adminLogin();
   <link rel="stylesheet" href="../public/css/styles.css">
 
 
-   // ? Inkluderer head.php for å hente head-innholdet
+    <!-- // ? Inkluderer head.php for å hente head-innholdet -->
 
   <?php require('../Views/partials/links.php'); ?>
 
@@ -33,7 +33,7 @@ adminLogin();
 
 <body class="bg-light">
   
-  // ? Inkluderer admin-header.php for å hente admin-header-innholdet
+  <!-- // ? Inkluderer admin-header.php for å hente admin-header-innholdet -->
 
   <?php require('./admin-header.php'); ?>
   <div class="container-fluid" id="main-content">
@@ -47,7 +47,7 @@ adminLogin();
   </div>
 
 
-    // ? Inkluderer script.php for å hente script-innholdet
+    <!-- // ? Inkluderer script.php for å hente script-innholdet -->
 
   <?php require('../public/js/script.php'); ?>
 </body>

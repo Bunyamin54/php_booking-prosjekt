@@ -52,7 +52,7 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
     <form method="POST">
 
 
-      // ? Admin Login Panel
+      <!-- // ? Admin Login Panel -->
 
       <h4 class="bg-dark text-white py-3 ">Admin Login Panel</h4>
 
@@ -116,7 +116,7 @@ if((isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
 
 
 
-  // * Inkluderer script.php for å hente script-innholdet
+   <!-- // * Inkluderer script.php for å hente script-innholdet -->
 
   <?php require('../public/js/script.php'); ?>
 
