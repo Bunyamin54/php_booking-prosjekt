@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>UIA Motel Om oss</title>
 
-    <!-- //?  External CSS for Swiper and custom styles -->
+    <!-- //?  Ekstern CSS for Swiper og egendefinerte stiler  -->
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
@@ -83,7 +83,7 @@
   </div>
 </div>
 
-    <!--   // ? Manager Team Section with Swiper -->
+    <!--   // ? Manager Team Seksjon med Swiper -->
 
 <h3 class="my-5 fw-bold h-font text-center">MANAGER TEAM</h3>
   <div class="container px-4">
@@ -115,7 +115,7 @@
 <?php require_once '../partials/footer.php'; ?>
 
 
-  <!-- //?  External JavaScript for Swiper -->
+  <!-- //? Ekstern JavaScript for Swiper -->
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 

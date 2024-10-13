@@ -17,7 +17,8 @@
   <?php
 
       
-   // ? Include the components from different view files
+    
+// ? Inkluder komponentene fra forskjellige visningsfiler
 
   require_once '../Views/partials/header.php';
   require_once '../Views/users/hjem.php';

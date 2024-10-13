@@ -53,7 +53,7 @@
                   </span>
                </div>
 
-               <!-- //? Rating -->
+               <!-- //? Rating- Vurdering -->
 
                <div class="vurdering mb-4">
                   <h6 class="mb-1">Vurdering </h6>
