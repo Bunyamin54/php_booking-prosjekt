@@ -10,6 +10,8 @@
 
   <link rel="stylesheet" href="../public/css/styles.css">
   <?php require_once '../Views/partials/links.php'; ?> 
+  <?php require_once '../vendor/autoload.php'; ?>
+
 </head>
 
 <body class="bg-light">
@@ -34,6 +36,7 @@
 
     <!-- //? Linking JavaScript files -->
      
+
   <?php require_once './js/script.php'; ?>  
 
 </body>
