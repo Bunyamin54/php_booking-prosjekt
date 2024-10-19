@@ -1,0 +1,17 @@
+{
+    "name": "genc54/php_booking-prosjekt",
+    "autoload": {
+        "psr-4": {
+            "Genc54\\PhpBookingProsjekt\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Bunyamin Genc",
+            "email": "bunyaming@uia.no"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.9"
+    }
+}
