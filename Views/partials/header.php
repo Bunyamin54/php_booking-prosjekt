@@ -1,5 +1,8 @@
 <!-- //? Navbar -->
 
+ 
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="/php_booking-prosjekt/public/index.php">UIA MOTEL</a>

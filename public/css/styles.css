@@ -34,6 +34,12 @@
       background-color: var(--teal_hover);
       border-color: var(--teal_hover);
   }
+
+  .custom-alert{
+    position : fixed;
+    top: 60px;
+    right: 25px;
+  }
   
 
  .availability-form {
@@ -50,8 +56,11 @@
 }
 
 .card {
-  max-width: 700px; /* Øk bredden på kortene */
+  
+  max-width: 700px; /* Kart genişliğini kontrol edebilirsiniz */
 }
+
+
 
 .card img {
   height: 300px; /* Høyden på bildet */
@@ -83,20 +92,14 @@
 
   } 
 
-  .custom-alert {
-    position: fixed;
-    top:25px;
-    right: 25px;
-
-  }
-
+ 
   #dashboard-menu {
  
     position: fixed;
     height: 100%;
   }
 
-  @media screen and (max-width: 575px) {
+  @media screen and (max-width:991px) {
     #dashboard-menu {
       
       height: auto;
