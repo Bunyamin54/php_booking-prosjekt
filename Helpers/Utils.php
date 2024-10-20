@@ -12,10 +12,10 @@
        
             echo"<script> window.location.href = '../public/index.php';
             </script>";
+
+            exit;
           
     }
- 
-    session_regenerate_id(true);
 
  
     } 
@@ -27,6 +27,7 @@
   echo "<script>
   window.location.href='$url';
   </script>";
+  exit;
 
 } 
  
