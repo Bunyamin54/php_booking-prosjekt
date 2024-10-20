@@ -1,4 +1,5 @@
 <?php 
+
 require('../../Helpers/Utils.php');
 require('../../Config/Database.php');
 
@@ -13,7 +14,7 @@ if (isset($_POST['get_general'])) {
         $data = mysqli_fetch_assoc($res);
         echo json_encode($data);  
     } else {
-        echo json_encode(['error' => 'Veri bulunamadı']);
+        echo json_encode(['error' => 'Data not found']);
     }
     }
 
@@ -44,6 +45,21 @@ if (isset($_POST['get_general'])) {
 
 
     }
+
+
+
+    if (isset($_POST['get_contacts'])) {
+        $q = "SELECT * FROM `contact_details` WHERE `sr_no` = ?";
+        $values = [1];
+        $res = select($q, $values, "i");
+    
+        if ($res) {
+            $data = mysqli_fetch_assoc($res);
+            echo json_encode($data);  
+        } else {
+            echo json_encode(['error' => 'Data not found']);
+        }
+        }
 
 
 
