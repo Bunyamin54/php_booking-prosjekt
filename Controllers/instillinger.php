@@ -115,7 +115,7 @@ adminLogin();
 
 
 
-        <div class="card" style="min-width: 100%;">
+        <div class="card border-0 shadow-none mb-4" style="min-width: 100%;">
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between mb-3">
               <h4 class="card-title m-0">
@@ -165,8 +165,8 @@ adminLogin();
               </button>
             </div>
 
-            <div class="row"> 
-            
+            <div class="row">
+
               <div class="col-lg-6">
                 <div class="mb-4">
                   <h6 class="card-subtitle mb-1 fw-bold">Adress</h6>
@@ -188,9 +188,9 @@ adminLogin();
                 </div>
               </div>
 
-        
+
               <div class="col-lg-6">
-              
+
                 <div class="mb-4">
                   <h6 class="card-subtitle mb-1 fw-bold">Sosial media</h6>
                   <p class="card-text mb-1">
@@ -223,8 +223,108 @@ adminLogin();
           </div>
         </div>
 
+        <!--  //* Kontakt details modal -->
+
+        <div class="modal fade" id="contacts-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <form id="general_s_form">
+
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Kontakt Instillinger</h5>
+
+                </div>
 
 
+                <!-- // * Kontakt details form modal -->
+
+                <div class="modal-body">
+
+                  <div class="container-fluid p-0">
+                    <div class="row">
+                      <!-- Left side (Address, Google Map, Phone, Email) -->
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label fw-bold">Address</label>
+                          <input type="text" name="address" id="address_inp" class="form-control shadow-none" required>
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="form-label fw-bold">Google Map link</label>
+                          <input type="text" name="gmap" id="gmap_inp" class="form-control shadow-none" required>
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="form-label fw-bold">Telefon Nummer (with country code)</label>
+                          <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                            <input type="text" name="phone" class="form-control shadow-none" required>
+                          </div>
+                        </div>
+
+                        <div class="mb-3">
+                          <label class="form-label fw-bold">Email</label>
+                          <input type="email" name="email" id="email_inp" class="form-control shadow-none" required>
+                        </div>
+                      </div>
+
+                      <!-- Right side (Social Media) -->
+                      <div class="col-md-6">
+                        <div class="mb-3">
+                          <label class="form-label fw-bold">Social Media</label>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="bi bi-facebook" style="color: #1877F2;"></i></span>
+                            <input type="text" name="fb" id="fb_inp" class="form-control shadow-none" required>
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="bi bi-instagram" style="color: #E4405F;"></i></span>
+                            <input type="text" name="insta" id="insta_inp" class="form-control shadow-none" required>
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="bi bi-youtube" style="color: #FF0000;"></i></span>
+                            <input type="text" name="yt" id="yt_inp" class="form-control shadow-none" required>
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="bi bi-twitter" style="color: #1DA1F2;"></i></span>
+                            <input type="text" name="tw" id="tw_inp" class="form-control shadow-none" required>
+
+                        
+
+                          </div>
+
+                          <div class="mb-3">
+                          <label class="form-label fw-bold">iFrame Src</label>
+                          <input type="text" name="iframe" id="iframe_inp" class="form-control shadow-none" required>
+                        </div>
+
+                        
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+                <div class="modal-footer">
+                  <button type="button" onclick="site_title.value = general_data.site_title, site_om.value=general_data.site_om " class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
+                  <button type="submit" class="btn custom-bg text-white shadow-none ">Send inn</button>
+
+
+
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+        </div>
 
 
 

@@ -10,15 +10,14 @@
 
   <link rel="stylesheet" href="../public/css/styles.css">
   <?php require_once '../Views/partials/links.php'; ?> 
-  <?php require_once '../vendor/autoload.php'; ?>
-
+  
 </head>
 
 <body class="bg-light">
 
   <?php
 
-      
+
     
 // ? Inkluder komponentene fra forskjellige visningsfiler
 
