@@ -62,18 +62,26 @@ if (isset($_POST['get_general'])) {
         }
 
 
-        if (isset($_POST['get_contacts']))
-        {
-          $frm_data = filteration($_POST);
-   
-   
-      $q =  "UPDATE `contact_details` SET 'address'= ?, 'gmap'= ?, 'phone'= ?, 'email'= ?, 'tw'= ?, 'insta'= ?, 'fb'= ?, 'yt'= ?,'iframe'= ? WHERE  `sr_no` = ?";
-   
-       $values = [$frm_data['adress'], $frm_data['gmap'],$frm_data['gmap'],$frm_data['phone'],$frm_data['email'],$frm_data['tw'],$frm_data['insta'],$frm_data['fb'],$frm_data['yt'],$frm_data['iframe'],1];
-       
-       $res = update ($q, $values, "sssssssssi");
-       echo $res;
-   
-   
-       }
+    
+
+       if (isset($_POST['update_contacts']))
+      
+       {
+         $frm_data = filteration($_POST);
+  
+  
+     $q =  "  UPDATE `contact_details` SET `address`=?,`gmap`=?,`phone`=?,`email`=?,`tw`=?,`insta`=?,`fb`=?,`yt`=?,`iframe`=? WHERE  `sr_no` = ?";
+  
+      $values = [$frm_data['address'], $frm_data['gmap'],$frm_data['phone'],$frm_data['email'],$frm_data['tw'],$frm_data['insta'],$frm_data['fb'],$frm_data['yt'],$frm_data['iframe'],1];
+      $res = update ($q, $values, "sssssssssi");
+      echo $res;
+  
+  
+      }
+
+
+
+
+
+
 ?>

@@ -227,7 +227,7 @@ adminLogin();
 
         <div class="modal fade" id="contacts-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
-            <form id="general_s_form">
+            <form id="contacts_s_form">
 
               <div class="modal-content">
                 <div class="modal-header">
@@ -236,7 +236,7 @@ adminLogin();
                 </div>
 
 
-                <!-- // * Kontakt details form modal -->
+                
 
                 <div class="modal-body">
 
@@ -258,7 +258,7 @@ adminLogin();
                           <label class="form-label fw-bold">Telefon Nummer (with country code)</label>
                           <div class="input-group mb-3">
                             <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                            <input type="text" name="phone" class="form-control shadow-none" required>
+                            <input type="text" name="phone" id="phone_inp" class="form-control shadow-none" required>
                           </div>
                         </div>
 
@@ -274,9 +274,11 @@ adminLogin();
                           <label class="form-label fw-bold">Social Media</label>
 
                           <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="bi bi-facebook" style="color: #1877F2;"></i></span>
-                            <input type="text" name="fb" id="fb_inp" class="form-control shadow-none" required>
+                            <span class="input-group-text"><i class="bi bi-twitter" style="color: #1DA1F2;"></i></span>
+                            <input type="text" name="tw" id="tw_inp" class="form-control shadow-none" required>
+
                           </div>
+
 
                           <div class="input-group mb-3">
                             <span class="input-group-text"><i class="bi bi-instagram" style="color: #E4405F;"></i></span>
@@ -284,17 +286,18 @@ adminLogin();
                           </div>
 
                           <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="bi bi-facebook" style="color: #1877F2;"></i></span>
+                            <input type="text" name="fb" id="fb_inp" class="form-control shadow-none" required>
+                          </div>
+
+                         
+
+                          <div class="input-group mb-3">
                             <span class="input-group-text"><i class="bi bi-youtube" style="color: #FF0000;"></i></span>
                             <input type="text" name="yt" id="yt_inp" class="form-control shadow-none" required>
                           </div>
 
-                          <div class="input-group mb-3">
-                            <span class="input-group-text"><i class="bi bi-twitter" style="color: #1DA1F2;"></i></span>
-                            <input type="text" name="tw" id="tw_inp" class="form-control shadow-none" required>
-
-                        
-
-                          </div>
+                         
 
                           <div class="mb-3">
                           <label class="form-label fw-bold">iFrame Src</label>
@@ -313,7 +316,7 @@ adminLogin();
 
 
                 <div class="modal-footer">
-                  <button type="button" onclick="contact_inp(contacts_data) " class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
+                  <button type="button" onclick="contacts_inp(contacts_data) " class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
                   <button type="submit" class="btn custom-bg text-white shadow-none ">Send inn</button>
 
 
@@ -426,7 +429,7 @@ adminLogin();
         }
       };
 
-      xhr.send('site_title=' + site_title_val + '&site_om=' + site_om_val + '&update_general=1');
+      xhr.send('site_title=' + site_title_val + '&site_om=' + site_om_val + '&update_general');
 
     }
 
@@ -488,48 +491,64 @@ adminLogin();
     }
 
 
-    function contacts_inp(contacts_data){
 
-      let contacts_inp_id =['address', 'gmap', 'phone', 'email', 'tw', 'insta', 'fb', 'yt','iframe_i'];
-      for(i=0;i<contacts_inp_id.length;i++){
-        document.getElementById(contacts_inp_id[i]).value = data[i+1];
-      }
-    }
-    contacts_s_form.addEventListener('submit',function(e){
+       function contacts_inp(data) 
+       
+       {
 
-      e.preventDefault();
-      upd_contacts();
-    })
-    function upd_contacts(){
-   let index = ['address', 'gmap', 'phone', 'email', 'tw', 'insta', 'fb', 'yt','iframe_i'];
-   let contacts_inp_id = ['address_inp', 'gmap_inp', 'phone_inp', 'email_inp', 'tw_inp', 'insta_inp', 'fb_inp', 'yt_inp','iframe_inp'];   
-   let data_str="";
-   for(i=0;i<index.length;i++){
-    data_str += index[i] + "=" +document.getElementById(contacts_inp_id[i]).value + '&';
+        let contacts_p_id = ['address_inp', 'gmap_inp', 'phone_inp', 'email_inp', 'tw_inp', 'insta_inp', 'fb_inp', 'yt_inp', 'iframe_inp'];
 
-   }
-   data_str += "upd_concats";
-   let xhr = new XMLHttpRequest();
-      xhr.open("POST", "ajax/instillinger_crud.php", true);
-      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-      xhr.onload =function(){
-        var myModal = document.getElementById('contacts-s');
-        var modal = bootstrap.Modal.getInstance(myModal);
-        modal.hide();
-        if (this.responseText == 1 ) {
-          alert('success', 'Changes saved!');
-          get_contects();
-
-
-        } else {
-          alert('erorr', 'no changes made!');
+        for (i = 0; i < contacts_p_id.length; i++) {
+          document.getElementById(contacts_p_id[i]).value = data[i + 1];
         }
-        get_general();
-        
+
+       }
+
+
+       contacts_s_form.addEventListener('submit', function(e) {
+       
+      });
+
+      function upd_contacts()
+      {
+
+     let index = ['address', 'gmap', 'phone', 'email', 'tw', 'insta', 'fb', 'yt', 'iframe'];
+     let contacts_inp_id = ['address_inp', 'gmap_inp', 'phone_inp', 'email_inp', 'tw_inp', 'insta_inp', 'fb_inp', 'yt_inp', 'iframe_inp'];
+
+     let data_str = "";
+
+     for (i = 0; i < index.length; i++) {
+       data_str += index[i] + '=' + document.getElementById(contacts_inp_id[i]).value + '&';
+
+         
       }
-      xhr.send(data_str);
-  }
+       data_str += 'update_contacts';
+
+       let xhr = new XMLHttpRequest();
+        xhr.open("POST", "ajax/instillinger_crud.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      xhr.onload = function() {
+
+         var myModal = document.getElementById('contacts-s');
+          var modal = bootstrap.Modal.getInstance(myModal);
+          modal.hide();
+    
+
+         if (this.responseText == 1) {
+          alert('success', 'Data updated successfully');
+          get_contacts();
+        } else {  
+          alert('danger', 'Data not updated');
+        }
+
+      }
+
+         
+        xhr.send(data_str);
+
+    }
+  
 
     window.onload = function() {
       get_general();
