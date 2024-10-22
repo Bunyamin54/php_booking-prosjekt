@@ -313,7 +313,7 @@ adminLogin();
 
 
                 <div class="modal-footer">
-                  <button type="button" onclick="site_title.value = general_data.site_title, site_om.value=general_data.site_om " class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
+                  <button type="button" onclick="contact_inp(contacts_data) " class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
                   <button type="submit" class="btn custom-bg text-white shadow-none ">Send inn</button>
 
 
@@ -337,9 +337,11 @@ adminLogin();
   <script>
     let general_data, contacts_data;
 
-    let get_general_s_form = document.getElementById('general_s_form');
+    let general_s_form = document.getElementById('general_s_form');
     let site_title_inp = document.getElementById('site_title_inp');
     let site_om_inp = document.getElementById('site_om_inp');
+
+    let contacts_s_form = document.getElementById('contacts_s_form');
 
 
 
@@ -478,6 +480,7 @@ adminLogin();
         }
 
         iframe.src = contacts_data[9];
+        contacts_inp(contacts_data);
 
       }
 
@@ -485,7 +488,48 @@ adminLogin();
     }
 
 
+    function contacts_inp(contacts_data){
 
+      let contacts_inp_id =['address', 'gmap', 'phone', 'email', 'tw', 'insta', 'fb', 'yt','iframe_i'];
+      for(i=0;i<contacts_inp_id.length;i++){
+        document.getElementById(contacts_inp_id[i]).value = data[i+1];
+      }
+    }
+    contacts_s_form.addEventListener('submit',function(e){
+
+      e.preventDefault();
+      upd_contacts();
+    })
+    function upd_contacts(){
+   let index = ['address', 'gmap', 'phone', 'email', 'tw', 'insta', 'fb', 'yt','iframe_i'];
+   let contacts_inp_id = ['address_inp', 'gmap_inp', 'phone_inp', 'email_inp', 'tw_inp', 'insta_inp', 'fb_inp', 'yt_inp','iframe_inp'];   
+   let data_str="";
+   for(i=0;i<index.length;i++){
+    data_str += index[i] + "=" +document.getElementById(contacts_inp_id[i]).value + '&';
+
+   }
+   data_str += "upd_concats";
+   let xhr = new XMLHttpRequest();
+      xhr.open("POST", "ajax/instillinger_crud.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      xhr.onload =function(){
+        var myModal = document.getElementById('contacts-s');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+        if (this.responseText == 1 ) {
+          alert('success', 'Changes saved!');
+          get_contects();
+
+
+        } else {
+          alert('erorr', 'no changes made!');
+        }
+        get_general();
+        
+      }
+      xhr.send(data_str);
+  }
 
     window.onload = function() {
       get_general();
