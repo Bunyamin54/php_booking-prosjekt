@@ -344,6 +344,7 @@ adminLogin();
             </div>
 
             <div class="row" id="team-data">
+
             </div>
 
           </div>
@@ -354,7 +355,7 @@ adminLogin();
 
         <div class="modal fade" id="team-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
-            <form id="team_s_form">
+            <form id="team_s_form" enctype="multipart/form-data">
 
               <div class="modal-content">
                 <div class="modal-header">
@@ -375,7 +376,7 @@ adminLogin();
                   </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" onclick=" " class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
+                  <button type="button" onclick="member_name.value='',member_picture.value = ''" class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
                   <button type="submit" class="btn custom-bg text-white shadow-none ">Send inn</button>
 
 
@@ -421,13 +422,7 @@ adminLogin();
 
     {
       let site_title = document.getElementById('site_title');
-
-
       let site_om = document.getElementById('site_om');
-
-
-
-
       let shutdown_toggle = document.getElementById('shutdown_toggle');
 
 
@@ -438,11 +433,6 @@ adminLogin();
 
       xhr.onload = function() {
 
-
-
-
-
-        console.log(this.responseText);
         try {
           general_data = JSON.parse(this.responseText);
 
@@ -617,22 +607,21 @@ adminLogin();
 
 
     team_s_form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      add_member();
+       e.preventDefault();
+       add_member();
 
     });
 
     function add_member() {
-      let data = new FormData(team_s_form);
-      data.append('name', 'member_name_inp.value');
-      data.append('picture', 'member_picture_inp.files[0]');
+      let data = new FormData();
+      data.append('name', member_name_inp.value);
+      data.append('picture', member_picture_inp.files[0]);
       data.append('add_member', '');
 
 
       let xhr = new XMLHttpRequest();
       xhr.open("POST", "ajax/instillinger_crud.php", true);
-      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
 
       xhr.onload = function() {
 
@@ -641,23 +630,18 @@ adminLogin();
         var modal = bootstrap.Modal.getInstance(myModal);
         modal.hide();
 
-         if(this.responseText == 'img_r')
-         {
-           alert('danger', 'Invalid image format or size');
-         }
-         else if(this.responseText ==  'inv_size')
-         {
-           alert('danger', 'Image size should be less than 2mb!');
-          
-         }
-         else if (this.responseText == 'upload_failed')
-         {
-           alert('danger', 'Error in uploading image');
-         }
-        else  {
+        if (this.responseText == 'inv_img') {
+          alert('danger', 'Invalid image format or size');
+        } else if (this.responseText == 'inv_size') {
+          alert('danger', 'Image size should be less than 2mb!');
+
+        } else if (this.responseText == 'upd_failed') {
+          alert('danger', 'Error in uploading image');
+        } else {
           alert('success', 'Member added successfully');
-           member_name_inp.value = '';
-           member_picture_inp.value = '';
+          member_name_inp.value = '';
+          member_picture_inp.value = '';
+          get_members();
         }
 
       }
@@ -668,9 +652,50 @@ adminLogin();
     }
 
 
+      function get_members() 
+      {
+
+       let xhr = new XMLHttpRequest(); 
+      xhr.open("POST", "ajax/instillinger_crud.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      xhr.onload = function(){ 
+        document.getElementById('team-data').innerHTML = this.responseText;
+      }
+      
+      
+      xhr.send('get_members');
+    }
+    
+
+
+      function rem_member(val) 
+      {
+  
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "ajax/instillinger_crud.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      xhr.onload = function() {
+
+        if (this.responseText == 1) {
+          alert('success', 'Member removed successfully');
+          get_members();
+        } else {
+          alert('danger', 'Server down!');
+        }
+
+      }
+
+       xhr.send('rem_member=' + val);
+    }
+ 
+
     window.onload = function() {
       get_general();
       get_contacts();
+      get_members();
     }
   </script>
 

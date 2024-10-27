@@ -1,50 +1,58 @@
 <?php
 
+// frontend funksjoner
 
-     define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/php_booking-prosjekt/public/images/');
+define('SITE_URL', 'http://127.0.0.1/php_booking-prosjekt/');
 
-     define('ABOUT_FOLDER', 'about/');
-
-
-
-    //  /Applications/XAMPP/xamppfiles/htdocs
-
-  // ? Funksjon for å sjekke om administratoren er logget inn 
+define('ABOUT_IMG_PATH', SITE_URL . 'images/about/');
 
 
-  function adminLogin()  
-    {
-        //? Hvis ikke logget inn, blir brukeren omdirigert til innloggingssiden via JavaScript
-        session_start();
-        if(!(isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
 
-       
-            echo"<script> window.location.href = '../public/index.php';
+
+// backend funksjoner upload prorcesss needs this data
+
+define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/php_booking-prosjekt/public/images');
+
+define('ABOUT_FOLDER', 'about/');
+
+
+
+//  /Applications/XAMPP/xamppfiles/htdocs
+
+// ? Funksjon for å sjekke om administratoren er logget inn 
+
+
+function adminLogin()
+{
+  //? Hvis ikke logget inn, blir brukeren omdirigert til innloggingssiden via JavaScript
+  session_start();
+  if (!(isset($_SESSION['adminLogin']) && $_SESSION['adminLogin'] == true)) {
+
+
+    echo "<script> window.location.href = '../public/index.php';
             </script>";
 
-            exit;
-          
-    }
+    exit;
+  }
+}
 
- 
-    } 
+//  ? Funksjon for å omdirigere brukeren til en annen side
 
-  //  ? Funksjon for å omdirigere brukeren til en annen side
+function redirect($url)
+{
 
- function redirect($url) {
-     
   echo "<script>
   window.location.href='$url';
   </script>";
   exit;
+}
 
-} 
- 
-   // ? Funksjon for å vise en melding
+// ? Funksjon for å vise en melding
 
-function alert($type, $message) {
-     $bs_class = ($type == "success") ? "alert-success" : "alert-danger";
-    echo <<<alert
+function alert($type, $message)
+{
+  $bs_class = ($type == "success") ? "alert-success" : "alert-danger";
+  echo <<<alert
         <div class= "alert $bs_class alert-dismissible fade show custom-alert" role = "alert">
         <strong class="me-3">$message</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> 
@@ -52,30 +60,35 @@ function alert($type, $message) {
     alert;
 }
 
-   function uploadImage($image, $folder)
+function uploadImage($image, $folder)
 
-  {
-    $valid_mime = ['image/jpeg', 'image/png', 'image/webp'];
-    $img_mime = $image['type'];
+{
+  $valid_mime = ['image/jpeg', 'image/png', 'image/webp'];
+  $img_mime = $image['type'];
 
-    if (!in_array($img_mime, $valid_mime)) {
-        return 'inv_img';    // invalid image mime or format
-    } else if(($image['size']/(1024*1024))>2) {
-       return 'inv_size';  // invalid image size større enn 2mb
+  if (!in_array($img_mime, $valid_mime)) {
+    return 'inv_img';    // invalid image mime or format
+  } else if (($image['size'] / (1024 * 1024)) > 2) {
+    return 'inv_size';  // invalid image size større enn 2mb
+  } else {
+    $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+    $rname = 'IMG_' . random_int(11111, 99999) . ". $ext";
+    $img_path = UPLOAD_IMAGE_PATH . $folder . '/' . $rname;
+    if (move_uploaded_file($image['tmp_name'], $img_path)) {
+      return $rname;
+    } else {
+      return 'updload_failed';  // error in uploading image
     }
-    else {
-         $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
-         $rname = 'IMG_' .random_int(11111, 99999) . '.' . $ext;
-         $img_path = UPLOAD_IMAGE_PATH . $folder . $rname;
-        if(move_uploaded_file($image['tmp_name'], $img_path)) {
-            return $rname;
-        } else {
-            return 'upload_err';  // error in uploading image
-        }  
-    }
-
   }
+}
 
+function deleteImage($image, $folder)
 
+{
 
-?>
+  if (unlink(UPLOAD_IMAGE_PATH . $folder . '/' . $image)) {
+    return true;
+  } else {
+    return false;
+  }
+}
