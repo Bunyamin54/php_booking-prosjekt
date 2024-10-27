@@ -81,8 +81,7 @@ if (isset($_POST['add_member'])) {
         echo 'img_r';
     } else if ($img_r == 'inv_size') {
         echo 'img_r';
-    } else if ($img_r == 'upd_failed') {
-
+    } else if ($img_r == 'upload_failed') {
         echo 'img_r';
     } else {
 
@@ -99,6 +98,7 @@ if (isset($_POST['get_members'])) {
     $res = selectAll('team_details');
 
     while ($row = mysqli_fetch_assoc($res)) {
+
 
         $path = ABOUT_IMG_PATH;
         echo <<<data
