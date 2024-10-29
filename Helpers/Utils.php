@@ -3,8 +3,9 @@
 // frontend funksjoner
 
 define('SITE_URL', 'http://127.0.0.1/php_booking-prosjekt/');
+define('SITE_URL_IMG', 'http://127.0.0.1:5500/public/');
 
-define('ABOUT_IMG_PATH', SITE_URL . 'images/about/');
+define('ABOUT_IMG_PATH', SITE_URL_IMG . 'images/about/');
 
 
 
@@ -73,8 +74,9 @@ function uploadImage($image, $folder)
   } else {
     $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
     $rname = 'IMG_' . random_int(11111, 99999) . ".$ext";
-    $img_path = UPLOAD_IMAGE_PATH . '/'. $folder . '/' . $rname;
+    $img_path = UPLOAD_IMAGE_PATH . '/' . $folder . '/' . $rname;
     if (move_uploaded_file($image['tmp_name'], $img_path)) {
+     
       return $rname;
     } else {
       return 'updload_failed';  // error in uploading image

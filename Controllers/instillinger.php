@@ -632,12 +632,15 @@ adminLogin();
         var modal = bootstrap.Modal.getInstance(myModal);
         modal.hide();
 
+     
+
         if (this.responseText == 'inv_img') {
           alert('danger', 'Invalid image format or size');
         } else if (this.responseText == 'inv_size') {
           alert('danger', 'Image size should be less than 2mb!');
 
         } else if (this.responseText == 'upload_failed') {
+
           alert('danger', 'Error in uploading image');
         } else {
           alert('success', 'Member added successfully');
