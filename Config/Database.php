@@ -26,10 +26,12 @@ function filteration($data)
 {
 
     foreach ($data as $key => $value) {
-        $data[$key] = trim($value);
-        $data[$key] = stripcslashes($value);
-        $data[$key] = htmlspecialchars($value);
-        $data[$key] = strip_tags($value);
+        $value = trim($value);
+        $value = stripcslashes($value);
+        $value = htmlspecialchars($value);
+        $value = strip_tags($value);
+
+        $data[$key] = $value;
     }
     return $data;
 }

@@ -36,11 +36,11 @@
   <?php require_once '../partials/header.php'; ?>
   <!-- <?php require_once './login_registering.php'; ?>
 
-  <!-- <?php require_once './fasiliteter.php'; ?> -->
+  <!- <?php require_once './fasiliteter.php'; ?> -->
 
 
      <!-- // ? Kontakt oss side innhold -->
-
+     
   <div class="my-5 px-4">  
 
 
@@ -58,44 +58,53 @@
           <!-- //  ? iframe for å vise google maps -->
 
           <div class="bg-white rounded shadow p-4 ">
-            <iframe class="w-100 rounded mb-2" height="320px" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2104.597154186346!2d8.000460177067456!3d58.163846074071046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4638025378c67fc7%3A0xfd4fe654e2fbbb6a!2sUniversity%20of%20Agder!5e0!3m2!1sen!2sno!4v1726998002793!5m2!1sen!2sno" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe class="w-100 rounded mb-2" height="320px" src="<?php echo $contact_r ['iframe'] ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             
                <!-- // ? Adressen til universitetet -->
 
               <h5>Adressen</h5>
             <a href="https://maps.app.goo.gl/vnQML2s45hKWNkEN7" target="_blank" class="d-inline-block text-decoration-none text-dark mb-2">
-              <i class="bi bi-geo-alt"></i> Campus Kristiansand, Universitetsveien 25, 4630 Kristiansand, Norge</a>
+              <i class="bi bi-geo-alt"></i> <?php echo $contact_r ['address'] ?></a>
 
             
             <!-- // ? Kontakt oss  og følg oss delen med sosila media ikoner -->
 
               <h5 class="mt-4">Kontakt oss</h5>
-            <a href="tel: +4755555555" class="d-inline-block mb-2 text-decoration-none text-dark"> <i class="bi bi-telephone"></i>+4755555555</a>
+            <a href="tel: +<?php echo $contact_r ['phone'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark"> <i class="bi bi-telephone"></i>+<?php echo $contact_r ['phone'] ?></a>
 
           
             <h5 class="mt-4">Email</h5>
-            <a href="mailto: universityofagder@uia.no" class="d-inline-block text-decoration-none text-dark">
+            <a href="mailto: <?php echo $contact_r ['email'] ?>" class="d-inline-block text-decoration-none text-dark">
               <i class="bi bi-envelope-fill"></i> universityofagder@uia.no
             </a>
             
             <h5 class="mt-4">Følg oss</h5>
-            <a href="#" class="d-inline-block text-dark fs-3 me-2">
-               <i class="bi bi-twitter me-1"style="color: #1DA1F2"></i> 
+             <?php 
+             if($contact_r['tw'] != '') {
+              echo <<<data
+                  <a href="$contact_r ['tw']" class="d-inline-block text-dark fs-3 me-2">
+                  <i class="bi bi-twitter me-1"style="color: #1DA1F2"></i> 
              
-            </a>
+                  </a>
+              data;
+          }
           
-            <a href="#" class="d-inline-block text-dark fs-3 me-2">
+             
+             
+             ?>
+          
+            <a href="<?php echo $contact_r ['insta']?>" class="d-inline-block text-dark fs-3 me-2">
              
                 <i class="bi bi-instagram me-1" style="color: #E4405F;"></i> 
             
             </a> 
 
-            <a href="#" class="d-inline-block text-dark fs-3 me-2">
+            <a href="<?php echo $contact_r ['fb']?>" class="d-inline-block text-dark fs-3 me-2">
              
                 <i class="bi bi-facebook me-1"style="color: #1877F2;"></i> 
             </a>
           
-            <a href="#" class="d-inline-block text-dark fs-3 me-2">
+            <a href="<?php echo $contact_r ['yt']?>" class="d-inline-block text-dark fs-3 me-2">
              
                 <i class="bi bi-youtube me-1" style="color: #FF0000;"></i> 
                 <i></i>

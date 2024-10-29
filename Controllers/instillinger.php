@@ -258,7 +258,7 @@ adminLogin();
                           <label class="form-label fw-bold">Telefon Nummer (with country code)</label>
                           <div class="input-group mb-3">
                             <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
-                            <input type="text" name="phone" id="phone_inp" class="form-control shadow-none" required>
+                            <input type="number" name="phone" id="phone_inp" class="form-control shadow-none" required>
                           </div>
                         </div>
 
