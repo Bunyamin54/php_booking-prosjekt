@@ -88,7 +88,7 @@ function deleteImage($image, $folder)
 
 {
 
-  if (unlink(UPLOAD_IMAGE_PATH . $folder . '/' . $image)) {
+  if (unlink(UPLOAD_IMAGE_PATH . $folder . $image)) {
     return true;
   } else {
     return false;
