@@ -36,7 +36,6 @@
   <?php require_once '../partials/header.php'; ?>
   <!-- <?php require_once './login_registering.php'; ?>
 
-  <!- <?php require_once './fasiliteter.php'; ?> -->
 
 
      <!-- // ? Kontakt oss side innhold -->
@@ -55,26 +54,27 @@
       <div class="row">
         <div class="col-lg-6 col-md-6 px-4">
 
-          <!-- //  ? iframe for å vise google maps -->
+          <!-- //  ? iframe for å vise google maps  -->
 
           <div class="bg-white rounded shadow p-4 ">
-            <iframe class="w-100 rounded mb-2" height="320px" src="<?php echo $contact_r ['iframe'] ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
+          <iframe class="w-100 rounded" height="320px" src="<?php echo $contact_r['iframe']; ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+      
                <!-- // ? Adressen til universitetet -->
 
               <h5>Adressen</h5>
             <a href="https://maps.app.goo.gl/vnQML2s45hKWNkEN7" target="_blank" class="d-inline-block text-decoration-none text-dark mb-2">
-              <i class="bi bi-geo-alt"></i> <?php echo $contact_r ['address'] ?></a>
+              <i class="bi bi-geo-alt"></i> <?php echo $contact_r['address'] ?></a>
 
             
             <!-- // ? Kontakt oss  og følg oss delen med sosila media ikoner -->
 
               <h5 class="mt-4">Kontakt oss</h5>
-            <a href="tel: +<?php echo $contact_r ['phone'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark"> <i class="bi bi-telephone"></i>+<?php echo $contact_r ['phone'] ?></a>
+            <a href="tel: +<?php echo $contact_r ['phone'] ?>" class="d-inline-block mb-2 text-decoration-none text-dark"> <i class="bi bi-telephone"></i>+<?php echo $contact_r['phone'] ?></a>
 
           
             <h5 class="mt-4">Email</h5>
-            <a href="mailto: <?php echo $contact_r ['email'] ?>" class="d-inline-block text-decoration-none text-dark">
+            <a href="mailto: <?php echo $contact_r['email'] ?>" class="d-inline-block text-decoration-none text-dark">
               <i class="bi bi-envelope-fill"></i> universityofagder@uia.no
             </a>
             

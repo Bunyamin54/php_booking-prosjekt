@@ -8,6 +8,8 @@ $username = "root";
 $password = "";
 $dbname = "hotelprosjekt";
 
+
+
 //* Oppretter en forbindelse til databasen ved hjelp av mysqli_connect()
 
 $con = mysqli_connect($hostname, $username, $password, $dbname);
