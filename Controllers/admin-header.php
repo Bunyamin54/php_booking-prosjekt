@@ -28,10 +28,10 @@
                         <a class="nav-link text-white " href="dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Rom</a>
+                        <a class="nav-link text-white" href="rom.php">Rom</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Bruker</a>
+                        <a class="nav-link text-white" href="carousel.php">Carousel</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="instillinger.php">Instillinger</a>

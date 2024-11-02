@@ -6,6 +6,7 @@ define('SITE_URL', 'http://127.0.0.1/php_booking-prosjekt/');
 define('SITE_URL_IMG', 'http://127.0.0.1:5500/public/');
 
 define('ABOUT_IMG_PATH', SITE_URL_IMG . 'images/about/');
+define('CAROUSEL_IMG_PATH', SITE_URL_IMG . 'images/carousel/');
 
 
 
@@ -15,6 +16,7 @@ define('ABOUT_IMG_PATH', SITE_URL_IMG . 'images/about/');
 define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/php_booking-prosjekt/public/images');
 
 define('ABOUT_FOLDER', 'about/');
+define('CAROUSEL_FOLDER', 'carousel/');
 
 
 
