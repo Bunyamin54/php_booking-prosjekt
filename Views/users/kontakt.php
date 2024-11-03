@@ -24,7 +24,9 @@
       border-top-color: var(--teal) !important;
       transform: scale(1.03);
       transition: all 0.3s;
+    
     }
+    
   </style>
 
 </head>
@@ -118,7 +120,7 @@
 
           <div class="bg-white rounded shadow p-4 ">
            
-          <form>
+          <form method="POST">
 
             <!-- // ? Skjema for å sende melding -->
     
@@ -126,31 +128,34 @@
 
              <div class="mt-3">
               <label class="form-label" style="font-weight: 500;" >Navn</label>
-              <input type="text" class="form-control shadow-none">
+              <input name="name" required type="text" class="form-control shadow-none">
              </div>
 
               <div class="mt-3">
               <label class="form-label" style="font-weight: 500;" >Telefon</label>
-              <input type="tel" class="form-control shadow-none" >
+              <input name="phone" required type="tel" class="form-control shadow-none" >
              </div>
 
              <div class="mt-3">
               <label class="form-label" style="font-weight: 500;" >Email</label>
-              <input type="email" class="form-control shadow-none" >
+              <input name="email" required type="email" class="form-control shadow-none" >
              </div>
 
             
 
              <div class="mt-3">
               <label class="form-label" style="font-weight: 500;" >Tema</label>
-              <input type="text" class="form-control shadow-none" >
+              <input name="subject" required type="text" class="form-control shadow-none" >
              </div>
 
              <div class="mt-3">
-              <label class="form-label" style="font-weight: 500;" >Melding</label> <textarea class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
+              <label class="form-label" style="font-weight: 500;" >Melding</label> <textarea name="message" required  class="form-control shadow-none" rows="5" style="resize: none;"></textarea>
              
              </div>
-             <button type="submit" class="btn text-white custom-bg mt-3">Send</button>
+             
+             <button type="submit" name="send" class="btn text-white custom-bg mt-3">Send</button>
+
+             
           </form>
 
              
@@ -161,19 +166,30 @@
       </div>
     </div>
   </div>
+    <?php 
+    if(isset($_POST['send']))
+    { 
+      $frm_data = filteration($_POST);
+      $q = "INSERT INTO `user_queries`(`name`, `phone`, `email`, `subject`, `message`) VALUES (?,?,?,?,?)";
+      $values = [$frm_data['name'], $frm_data['phone'], $frm_data['email'], $frm_data['subject'], $frm_data['message']];
 
+      $res = insert($q,$values,'sssss');
+      if($res==1){
+        alert('success','Mail sent!');
+      }
+      else {
+        alert('error','Server Down! Try again late.');
+      }
+
+    }
+    
+    
+    
+    ?>
 
      <!-- // ? Inkluderer footer.php for å hente footer-innholdet -->
 
   <?php require_once '../partials/footer.php'; ?>
-
-
-
-
-
-
-
-
 
 
 </body>

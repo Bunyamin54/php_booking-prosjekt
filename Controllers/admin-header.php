@@ -28,7 +28,7 @@
                         <a class="nav-link text-white " href="dashboard.php">Dashboard</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="rom.php">Rom</a>
+                        <a class="nav-link text-white" href="brukersporsmal.php">Brukersporsmal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="carousel.php">Carousel</a>

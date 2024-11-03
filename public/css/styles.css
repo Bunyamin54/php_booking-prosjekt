@@ -90,7 +90,32 @@
    margin: 0 auto;  
    height: 1,7px;
 
+  }
+  .custom-alert{
+    position : fixed;
+    top: 60px;
+    right: 25px;
   } 
+
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
  
   #dashboard-menu {
