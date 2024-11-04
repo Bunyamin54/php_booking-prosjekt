@@ -46,6 +46,7 @@ if (isset($_GET['del'])) {
   }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,49 +77,17 @@ if (isset($_GET['del'])) {
               </button>
             </div>
         
-            <div class="table-responsive-md" style="height: 150px; overflow-y: scroll;">
+            <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
               <table class="table table-hover border">
                 <thead class="sticky-top">
                   <tr class="bg-dark text-light">
                     <th scope="col">#</th>
                     <th scope="col">Navn</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Tema</th>
-                    <th scope="col">Melding</th>
-                    <th scope="col">Dato</th>
                     <th scope="col">Handling</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <?php 
-                  $q = "SELECT * FROM `user_queries` ORDER BY `sr_no` DESC";
-                  $data = mysqli_query($con, $q);
-                  $i = 1;
-                  
-                  while ($row = mysqli_fetch_assoc($data)) {
-                    $seen = "";
-
-                    if ($row['seen'] != 1) {
-                      $seen .= "<a href='?seen={$row['sr_no']}' class='btn btn-sm rounded-pill btn-primary'>Mark as read</a>";
-                    }
-                    
-                    $seen .= "<a href='?del={$row['sr_no']}' class='btn btn-sm rounded-pill btn-danger mt-2'>slett</a>";
-                    
-                    echo <<<QUERY
-                    <tr>
-                      <td>{$i}</td>
-                      <td>{$row['name']}</td>
-                      <td>{$row['email']}</td> 
-                      <td>{$row['subject']}</td>
-                      <td>{$row['message']}</td>
-                      <td>{$row['date']}</td>
-                      <td>{$seen}</td>
-                    </tr>
-                    QUERY;
-                    
-                    $i++;
-                  }
-                  ?>
+                <tbody id="funksjoner-data">
+                
                 </tbody>
               </table>
             </div>
@@ -208,7 +177,7 @@ function add_funksjoner() {
       alert('success', 'New features added successfully');
       funksjoner_s_form.elements['funksjoner_name'].value='';
 
-      //get_members();
+      get_funksjoner();
     } else {
        alert('error', 'Operation Failed!');
     
@@ -222,7 +191,59 @@ function add_funksjoner() {
 }
 
 
+function get_funksjoner() 
+  {
 
+   let xhr = new XMLHttpRequest(); 
+  xhr.open("POST", "ajax/funksjoner_fasiliteter.php", true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  xhr.onload = function(){ 
+    document.getElementById('funksjoner-data').innerHTML = this.responseText;
+  }
+  
+  
+  xhr.send('get_funksjoner');
+}
+
+
+
+function rem_funksjoner(val) 
+  {
+
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "ajax/funksjoner_fasiliteter.php", true);
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+  xhr.onload = function() {
+
+    if (this.responseText == 1) {
+      alert('success', 'Funksjoner removed successfully');
+      get_funksjoner();
+    } else if(this.responseText == 'rom_added'){
+      alert('danger', 'Funksjoner is added in room!');
+    }
+    
+    else{
+      alert('danger', 'Server down!');
+    }
+
+  }
+
+   xhr.send('rem_funksjoner=' + val);
+}
+
+
+
+
+
+
+  window.onload = function() {
+    get_funksjoner();
+  }
    </script>
 
-</body
+</body >
+
+</html>

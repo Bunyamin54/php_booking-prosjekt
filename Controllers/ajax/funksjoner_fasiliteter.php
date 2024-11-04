@@ -14,9 +14,10 @@ if (isset($_POST['add_funksjoner'])) {
 }
 
 
-if (isset($_POST['get_members'])) {
+if (isset($_POST['get_funksjoner'])) {
 
-    $res = selectAll('team_details');
+    $res = selectAll('funksjoner');
+     $i = 1;
 
     while ($row = mysqli_fetch_assoc($res)) {
 
@@ -26,37 +27,32 @@ if (isset($_POST['get_members'])) {
 
 
         echo <<<data
-            <div class="col-md-2 mb-3">
-            <div class="card bg-dark text-white">
-            <img src="$path$row[picture]" class="card-img">
-            <div class="card-img-overlay text-end">
 
-            <button type="button" onclick="rem_member($row[sr_no])" class="btn btn-danger btn-sm shadow-none">
-            <i class="bi bi-trash"> </i>  Delete</button>
+          <tr>
+          
+            <td>$i</td>
+            <td>$row[name]</td>
+            <td>
+            <button type="button" onclick="rem_funksjoner($row[id])" class="btn btn-danger btn-sm shadow-none">
+             <i class="bi bi-trash"></i> Delete </button>
+            </td>
+          </tr>
 
-            </div>
-
-            <p class="card-text text-center px-3 py-2">$row[name]</p>
-            </div>
-            </div>                                                        
+                                                      
          data;
+
+         $i++;
     }
 }
 
 
-if (isset($_POST['rem_member'])) {
+if (isset($_POST['rem_funksjoner'])) {
     $frm_data = filteration($_POST);
-    $values = [$frm_data['rem_member']];
+    $values = [$frm_data['rem_funksjoner']];
 
-    $pre_q = "SELECT * FROM `team_details` WHERE `sr_no` = ?";
-    $res = select($pre_q, $values, "i");
-    $img = mysqli_fetch_assoc($res);
+    $q = "DELETE FROM `funksjoner` WHERE `id` = ?";
+    $res = delete($q, $values, "i");
+    echo $res;
 
-    if (deleteImage($img['picture'], ABOUT_FOLDER)) {
-        $q = "DELETE FROM `team_details` WHERE `sr_no` = ?";
-        $res = delete($q, $values, "i");
-        echo $res;
-    } else {
-        echo 0;
-    }
+   
 }
