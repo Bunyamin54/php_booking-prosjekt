@@ -113,14 +113,14 @@ if (isset($_GET['del'])) {
               </button>
             </div>
 
-            <div class="table-responsive-md" style="height: 350px; overflow-y: scroll;">
+            <div class="table-responsive-md" style="overflow-y: scroll;">
               <table class="table table-hover border">
                 <thead>
                   <tr class="bg-dark text-light">
                     <th scope="col">#</th>
                     <th scope="col">Icon</th>
                     <th scope="col">Navn</th>
-                    <th scope="col">Beskrivelse</th>
+                    <th scope="col" width="%40">Beskrivelse</th>
                     <th scope="col">Handling</th>
                   </tr>
                 </thead>
@@ -355,14 +355,15 @@ if (isset($_GET['del'])) {
         } else if (this.responseText == 'inv_size') {
           alert('danger', 'Image size should be less than 1mb!');
 
-        } else if (this.responseText == 'upd_failed') {
+        } else if (this.responseText == 'upload_failed') {
 
           alert('danger', 'Error in uploading image');
         } else {
           alert('success', 'Nye fasiliteter added successfully');
-          
+
           fasiliteter_s_form.reset();
-          // get_members();
+          get_fasiliteter();
+
         }
 
       }
@@ -373,11 +374,51 @@ if (isset($_GET['del'])) {
     }
 
 
+    function get_fasiliteter() {
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "ajax/funksjoner_fasiliteter.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      xhr.onload = function() {
+        document.getElementById('fasiliteter-data').innerHTML = this.responseText;
+      }
+
+
+      xhr.send('get_fasiliteter');
+    }
+
+
+
+    function rem_fasiliteter(id) {
+
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "ajax/funksjoner_fasiliteter.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      xhr.onload = function() {
+
+        if (this.responseText == 1) {
+          alert('success', 'Fasiliteter removed successfully');
+          get_fasiliteter();
+        } else if (this.responseText == 'rom_added') {
+          alert('danger', 'Fasiliteter is added in room!');
+        } else {
+          alert('danger', 'Server down!');
+        }
+
+      }
+
+      xhr.send('rem_fasiliteter=' + id);
+    }
+
 
 
 
     window.onload = function() {
       get_funksjoner();
+      get_fasiliteter();
     }
   </script>
 
