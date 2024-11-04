@@ -3,7 +3,8 @@
 // frontend funksjoneir
 
 define('SITE_URL', 'http://127.0.0.1/php_booking-prosjekt/');
-define('SITE_URL_IMG', 'http://127.0.0.1:5500/public/');
+// define('SITE_URL_IMG', 'http://127.0.0.1:5500/public/');
+define('SITE_URL_IMG', 'http://127.0.0.1/php_booking-prosjekt/public/');
 
 define('ABOUT_IMG_PATH', SITE_URL_IMG . 'images/about/');
 define('CAROUSEL_IMG_PATH', SITE_URL_IMG . 'images/carousel/');

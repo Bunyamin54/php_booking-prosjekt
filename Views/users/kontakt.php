@@ -36,8 +36,9 @@
 
 
   <?php require_once '../partials/header.php'; ?>
-  <!-- <?php require_once './login_registering.php'; ?>
-
+  <?php require_once './login_registering.php'; ?>
+  <link rel="stylesheet" href="../../public/css/styles.css">
+   
 
 
      <!-- // ? Kontakt oss side innhold -->
