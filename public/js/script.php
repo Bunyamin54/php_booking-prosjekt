@@ -87,8 +87,8 @@
   
   }
   function setActive() {
-    let navbar = documant.getElementById('nav-bar');
-    let a_tags =nabar.getElementTagName('a');
+    let navbar = document.getElementById('nav-bar');
+    let a_tags =navbar.getElementTagName('a');
     for(i=0; i<a_tags.length; i++){
         let file  = a_tags[i].href.split('/').pop();
         let file_name = file.split('.')[0];

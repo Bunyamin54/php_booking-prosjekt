@@ -56,3 +56,30 @@ if (isset($_POST['rem_funksjoner'])) {
 
    
 }
+
+
+if (isset($_POST['add_fasiliteter'])) {
+
+    $frm_data = filteration($_POST);
+
+    $img_r = uploadSVGImage($_FILES['icon'], FUNKSJONER_FOLDER);
+
+      echo json_encode($img_r);
+
+    if ($img_r == 'inv_img') {
+        echo 'img_r';
+    } else if ($img_r == 'inv_size') {
+        echo 'img_r';
+    } else if ($img_r == 'upload_failed') {
+        echo 'img_r';
+    } else {
+
+        $q = "INSERT INTO `fasiliteter`(`icon` , `name`, `beskrivelse`) VALUES (?,?, ?)";
+        $values = [$img_r, $frm_data['name'], $frm_data['beskrivelse']];
+        $res = insert($q, $values, "sss");
+        echo $res;
+    }
+}
+
+
+?>

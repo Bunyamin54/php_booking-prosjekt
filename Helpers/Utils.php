@@ -8,6 +8,7 @@ define('SITE_URL_IMG', 'http://127.0.0.1/php_booking-prosjekt/public/');
 
 define('ABOUT_IMG_PATH', SITE_URL_IMG . 'images/about/');
 define('CAROUSEL_IMG_PATH', SITE_URL_IMG . 'images/carousel/');
+define('FUNKSJONER_IMG_PATH', SITE_URL_IMG . 'images/funksjoner/');
 
 
 
@@ -18,6 +19,7 @@ define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/php_booking-prosjekt/p
 
 define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
+define('FUNKSJONER_FOLDER', 'funksjoner/');
 
 
 
@@ -79,7 +81,7 @@ function uploadImage($image, $folder)
     $rname = 'IMG_' . random_int(11111, 99999) . ".$ext";
     $img_path = UPLOAD_IMAGE_PATH . '/' . $folder . '/' . $rname;
     if (move_uploaded_file($image['tmp_name'], $img_path)) {
-     
+
       return $rname;
     } else {
       return 'updload_failed';  // error in uploading image
@@ -97,3 +99,28 @@ function deleteImage($image, $folder)
     return false;
   }
 }
+
+function uploadSVGImage($image, $folder)
+
+{
+  $valid_mime = ['image/svg+xml'];
+  $img_mime = $image['type'];
+
+  if (!in_array($img_mime, $valid_mime)) {
+    return 'inv_img';    // invalid image mime or format
+  } else if (($image['size'] / (1024 * 1024)) > 1) {
+    return 'inv_size';  // invalid image size større enn 1mb
+  } else {
+    $ext = pathinfo($image['name'], PATHINFO_EXTENSION);
+    $rname = 'IMG_' . random_int(11111, 99999) . ".$ext";
+    $img_path = UPLOAD_IMAGE_PATH . '/' . $folder . '/' . $rname;
+    if (move_uploaded_file($image['tmp_name'], $img_path)) {
+
+      return $rname;
+    } else {
+      return 'updload_failed';  // error in uploading image
+    }
+  }
+}
+
+?>
