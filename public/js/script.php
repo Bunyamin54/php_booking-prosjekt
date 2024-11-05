@@ -83,9 +83,17 @@
         </div>
      
      ` ;
-      document.body.appendChild(element);
+      document.body.append(element);
+      setTimeout(remAlert , 2000);
   
   }
+
+   function remAlert() {
+       document.getElementsByClassName('alert')[0].remove();
+    }
+   
+
+
   function setActive() {
     let navbar = document.getElementById('nav-bar');
     let a_tags =navbar.getElementTagName('a');

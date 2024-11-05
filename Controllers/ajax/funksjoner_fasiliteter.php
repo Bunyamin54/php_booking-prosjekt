@@ -10,14 +10,14 @@ if (isset($_POST['add_funksjoner'])) {
     $q = "INSERT INTO `funksjoner`(`name`) VALUES (?)";
     $values = [$frm_data['name']];
     $res = insert($q, $values, "s");
-    echo $res  ; 
+    echo $res;
 }
 
 
 if (isset($_POST['get_funksjoner'])) {
 
     $res = selectAll('funksjoner');
-     $i = 1;
+    $i = 1;
 
     while ($row = mysqli_fetch_assoc($res)) {
 
@@ -41,7 +41,7 @@ if (isset($_POST['get_funksjoner'])) {
                                                       
          data;
 
-         $i++;
+        $i++;
     }
 }
 
@@ -53,8 +53,6 @@ if (isset($_POST['rem_funksjoner'])) {
     $q = "DELETE FROM `funksjoner` WHERE `id` = ?";
     $res = delete($q, $values, "i");
     echo $res;
-
-   
 }
 
 
@@ -86,10 +84,10 @@ if (isset($_POST['add_fasiliteter'])) {
 if (isset($_POST['get_fasiliteter'])) {
 
     $res = selectAll('fasiliteter');
-     $i = 1;
+    $i = 1;
 
 
-     $path = FASILITETER_IMG_PATH;
+    $path = FASILITETER_IMG_PATH;
 
     while ($row = mysqli_fetch_assoc($res)) {
 
@@ -114,7 +112,7 @@ if (isset($_POST['get_fasiliteter'])) {
                                                       
          data;
 
-         $i++;
+        $i++;
     }
 }
 
@@ -123,12 +121,19 @@ if (isset($_POST['rem_fasiliteter'])) {
     $frm_data = filteration($_POST);
     $values = [$frm_data['rem_fasiliteter']];
 
-    $q = "DELETE FROM `fasiliteter` WHERE `id` = ?";
-    $res = delete($q, $values, "i");
-    echo $res;
 
-   
+
+    $pre_q = "SELECT * FROM `fasiliteter` WHERE `id` = ?";
+    $res = select($pre_q, $values, "i");
+    $img = mysqli_fetch_assoc($res);
+
+    if (deleteImage($img['icon'], FASILITETER_FOLDER)) {
+
+
+        $q = "DELETE FROM `fasiliteter` WHERE `id` = ?";
+        $res = delete($q, $values, "i");
+        echo $res;
+    } else {
+        echo 0;
+    }
 }
-
-
-?>
