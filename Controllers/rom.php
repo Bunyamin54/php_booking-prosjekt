@@ -30,7 +30,7 @@ adminLogin();
           <div class="card-body">
 
 
-            <div class="text-end mb-4">  
+            <div class="text-end mb-4">
               <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal" data-bs-target="#add-rom">
                 <i class="bi bi-plus-square"></i> Add
               </button>
@@ -48,7 +48,7 @@ adminLogin();
                     <th scope="col">Kvalitet</th>
                     <th scope="col">Status</th>
                     <th scope="col">Handling</th>
-                    
+
                   </tr>
                 </thead>
                 <tbody id="rom-data">
@@ -70,29 +70,112 @@ adminLogin();
   <!--  // * Rom Modal Form  -->
 
   <div class="modal fade" id="add-rom" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <form id="add_rom_form" enctype="multipart/form-data">
+    <div class="modal-dialog modal-lg">
+      <form id="add_rom_form" autocomplete="off">
 
-        <div class="modal-content">
+        <div class="modal-content ">
           <div class="modal-header">
             <h5 class="modal-title">Add Rom </h5>
 
           </div>
           <div class="modal-body">
-            <div class="col-md-6 mb-3">
 
-              <label class="form-label fw-bold">Navn </label>
-              <input type="text" name="name" class="form-control shadow-none" required>
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+
+                <label class="form-label fw-bold">Navn </label>
+                <input type="text" name="name" class="form-control shadow-none" required>
+
+              </div>
+
+              <div class="col-md-6 mb-3">
+
+                <label class="form-label fw-bold">Areal </label>
+                <input type="number" min="1" name="areal" class="form-control shadow-none" required>
+
+              </div>
+
+              <div class="col-md-6 mb-3">
+
+                <label class="form-label fw-bold">Pris </label>
+                <input type="number" min="1" name="pris" class="form-control shadow-none" required>
+
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-bold">Kvalitet </label>
+                <input type="number" min="1" name="kvalitet" class="form-control shadow-none" required>
+
+              </div>
+              <div class="col-md-6 mb-3">
+
+                <label class="form-label fw-bold">Voksen(Max.) </label>
+                <input type="number" min="1" name="voksen" class="form-control shadow-none" required>
+
+              </div>
+              <div class="col-md-6 mb-3">
+
+                <label class="form-label fw-bold">Barn(Max.) </label>
+                <input type="number" min="1" name="barn" class="form-control shadow-none" required>
+
+              </div>
+
+              <div class="col-12 mb-3">
+                <label class="form-label fw-bold">Funksjoner</label>
+                <div class="row">
+
+                  <?php
+
+                  $res = selectAll('funksjoner');
+                  while ($opt = mysqli_fetch_assoc($res)) {
+                    echo " 
+                    <div class='col-md-3 mb-1'>
+                     <label> 
+                     <input type='checkbox' name='funksjoner[]' value='$opt[id]' class='form-check-input shadow-none'>
+
+                       $opt[name]
+                     </label>
+                     </div>
+                    ";
+                  }
+
+                  ?>
+                </div>
+              </div>
+
+              <div class="col-12 mb-3">
+                <label class="form-label fw-bold">Fasiliteter</label>
+                <div class="row">
+
+                  <?php
+
+                  $res = selectAll('fasiliteter');
+                  while ($opt = mysqli_fetch_assoc($res)) {
+                    echo " 
+                    <div class='col-md-3 mb-1'>
+                    <label> 
+                    <input type='checkbox' name='fasiliteter[]' value='$opt[id]' class='form-check-input shadow-none'>
+
+                      $opt[name]
+                    </label>
+                    </div>
+                    ";
+                  }
+
+                  ?>
+                </div>
+              </div>
+
+              <div class="col-12 mb-3">
+
+                <label class="form-label fw-bold">Beskrivelse </label>
+                <textarea name="beskrivelse" rows="4" class="form-control shadow-none required"></textarea>
+
+              </div>
+
+
 
             </div>
-
-            <div class="col-md-6 mb-3">
-
-              <label class="form-label fw-bold">Areal </label>
-              <input type="number" name="area_name" class="form-control shadow-none" required>
-
-            </div>
-
           </div>
           <div class="modal-footer">
             <button type="reset" class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
@@ -109,54 +192,6 @@ adminLogin();
   </div>
 
 
-
-  <!--  // * Fasiliteter Modal Form  -->
-
-
-
-  <div class="modal fade" id="fasiliteter-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <form id="fasiliteter_s_form" enctype="multipart/form-data">
-
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Add Fasiliteter </h5>
-
-          </div>
-          <div class="modal-body">
-            <div class="mb-3">
-
-              <label class="form-label fw-bold">Navn </label>
-              <input type="text" name="fasiliteter_name" class="form-control shadow-none" required>
-
-            </div>
-            <div class="mb-3">
-
-              <label class="form-label fw-bold">Icon </label>
-              <input type="file" name="fasiliteter_icon" accept=".svg" class="form-control shadow-none" required>
-            </div>
-
-
-            <div class="mb-3">
-
-              <label class="form-label">Beskrivelse </label>
-              <textarea name="fasiliteter_beskrivelse" class="form-control shadow-none" rows="3"></textarea>
-            </div>
-
-          </div>
-          <div class="modal-footer">
-            <button type="reset" class="btn text-secondary shadow-none" data-bs-dismiss="modal">Kanseller</button>
-            <button type="submit" class="btn custom-bg text-white shadow-none ">Send inn</button>
-
-
-
-          </div>
-        </div>
-
-      </form>
-
-    </div>
-  </div>
 
 
 
@@ -164,8 +199,71 @@ adminLogin();
 
 
   <?php require(__DIR__ . '/../public/js/script.php'); ?>
- <script src="scripts/funksjoner_fasiliteter.js"></script>
 
+  <script>
+    let add_rom_form = document.getElementById('add_rom_form');
+
+    add_rom_form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      add_rom();
+
+    });
+
+
+    function add_rom() {
+      let data = new FormData();
+      data.append('add_rom', '');
+      data.append('name', add_rom_form.elements['name'].value);
+      data.append('areal', add_rom_form.elements['areal'].value);
+      data.append('pris', add_rom_form.elements['pris'].value);
+      data.append('kvalitet', add_rom_form.elements['kvalitet'].value);
+      data.append('voksen', add_rom_form.elements['voksen'].value);
+      data.append('barn', add_rom_form.elements['barn'].value);
+      data.append('beskrivelse', add_rom_form.elements['beskrivelse'].value);
+
+
+
+      let funksjoner = [];
+      document.querySelectorAll('input[name="funksjoner[]"]:checked').forEach(el => {
+        funksjoner.push(el.value);
+      });
+
+      let fasiliteter = [];
+      document.querySelectorAll('input[name="fasiliteter[]"]:checked').forEach(el => {
+        fasiliteter.push(el.value);
+      });
+
+
+      data.append('funksjoner', JSON.stringify(funksjoner));
+
+      data.append('fasiliteter', JSON.stringify(fasiliteter));
+
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "ajax/rom.php", true);
+
+      xhr.onload = function() {
+
+
+        var myModal = document.getElementById('add-rom');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+
+
+        if (this.responseText == 1) {
+          alert('success', 'Rom added successfully');
+          add_rom_form.reset();
+        } else {
+          console.log('Failed to add Rom');
+        }
+
+      }
+
+      xhr.send(data);
+
+
+    }
+  </script>
 </body>
 
 </html>
