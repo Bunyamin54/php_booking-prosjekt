@@ -27,7 +27,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-white " href="dashboard.php">Dashboard</a>
                     </li>
-                      
+                    <li class="nav-item">
+                        <a class="nav-link text-white " href="rom.php">rom</a>
+                    </li> 
                     <li class="nav-item">
                         <a class="nav-link text-white" href="funksjoner_fasiliteter.php">Funksjoner & Fasiliteter</a>
                     </li>
