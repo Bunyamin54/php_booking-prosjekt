@@ -314,8 +314,8 @@ adminLogin();
 
     </div>
   </div>
- 
-    
+
+
   <!--  // * Edit Modal Form  -->
 
   <div class="modal fade" id="edit-rom" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -422,7 +422,7 @@ adminLogin();
 
               </div>
 
-             <input type="hidden" name="rom_id">
+              <input type="hidden" name="rom_id">
 
             </div>
           </div>
@@ -445,6 +445,8 @@ adminLogin();
   <div class="modal fade" id="edit-rom" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <form id="add_rom_form" autocomplete="off">
+
+    
 
         <div class="modal-content ">
           <div class="modal-header">
@@ -652,46 +654,106 @@ adminLogin();
 
     let edit_rom_form = document.getElementById('edit_rom_form');
 
-     function edit_details(id)
-     
-     {
+    function edit_details(id)
 
-  
+    {
+
+
       let xhr = new XMLHttpRequest();
       xhr.open("POST", "ajax/rom.php", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
       xhr.onload = function() {
-      let data=JSON.parse(this.responseText);
+        let data = JSON.parse(this.responseText);
 
-        edit_rom_form.elements['name'].value=data.romdata.name;
-        edit_rom_form.elements['areal'].value=data.romdata.areal;
-        edit_rom_form.elements['pris'].value=data.romdata.pris;
-        edit_rom_form.elements['kvalitet'].value=data.romdata.kvalitet;
-        edit_rom_form.elements['voksen'].value=data.romdata.voksen;
-        edit_rom_form.elements['barn'].value=data.romdata.barn;
-        edit_rom_form.elements['beskrivelse'].value=data.romdata.beskrivelse;
-        edit_rom_form.elements['rom_id'].value=data.romdata.id;
+        edit_rom_form.elements['name'].value = data.romdata.name;
+        edit_rom_form.elements['areal'].value = data.romdata.areal;
+        edit_rom_form.elements['pris'].value = data.romdata.pris;
+        edit_rom_form.elements['kvalitet'].value = data.romdata.kvalitet;
+        edit_rom_form.elements['voksen'].value = data.romdata.voksen;
+        edit_rom_form.elements['barn'].value = data.romdata.barn;
+        edit_rom_form.elements['beskrivelse'].value = data.romdata.beskrivelse;
+        edit_rom_form.elements['rom_id'].value = data.romdata.id;
 
-  
-      
-        edit_rom_form.elements['funksjoner'].forEach(el => {
-         if (data.funksjoner.includes(Number(el.value))) {
-           el.checked = true;
-         }
+        document.querySelectorAll('input[name="funksjoner[]"]').forEach(el => {
+          if (el.checked) {
+            funksjoner.push(el.value);
+          }
         });
 
-        edit_rom_form.elements['fasiliteter'].forEach(el => {
-         if (data.fasiliteter.includes(Number(el.value))) {
-           el.checked = true;
-         }
+        document.querySelectorAll('input[name="fasiliteter[]"]').forEach(el => {
+          if (el.checked) {
+            fasiliteter.push(el.value);
+          }
         });
+
 
       }
 
       xhr.send('get_rom=' + id);
 
-     }
+    }
+
+
+    edit_rom_form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      submit_edit_rom();
+
+    });
+
+
+    function submit_edit_rom() {
+    console.log('funksjoner elements:', document.querySelectorAll('input[name="funksjoner[]"]'));
+    console.log('fasiliteter elements:', document.querySelectorAll('input[name="fasiliteter[]"]'));
+
+    let data = new FormData();
+
+    
+    data.append('edit_rom', '');
+    data.append('rom_id', edit_rom_form.elements['rom_id'].value);
+    data.append('areal', edit_rom_form.elements['areal'].value);
+    data.append('pris', edit_rom_form.elements['pris'].value);
+    data.append('kvalitet', edit_rom_form.elements['kvalitet'].value);
+    data.append('voksen', edit_rom_form.elements['voksen'].value);
+    data.append('barn', edit_rom_form.elements['barn'].value);
+    data.append('beskrivelse', edit_rom_form.elements['beskrivelse'].value);
+
+    // Funksjoner için değerleri toplama
+    let funksjoner = [];
+    document.querySelectorAll('input[name="funksjoner[]"]:checked').forEach(el => {
+        funksjoner.push(el.value);
+    });
+
+    // Fasiliteter için değerleri toplama
+    let fasiliteter = [];
+    document.querySelectorAll('input[name="fasiliteter[]"]:checked').forEach(el => {
+        fasiliteter.push(el.value);
+    });
+
+    data.append('funksjoner', JSON.stringify(funksjoner));
+    data.append('fasiliteter', JSON.stringify(fasiliteter));
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "ajax/rom.php", true);
+
+    xhr.onload = function() {
+        var myModal = document.getElementById('edit-rom');
+        var modal = bootstrap.Modal.getInstance(myModal);
+        modal.hide();
+
+        if (this.responseText == 1) {
+            alert('success', 'Rom data added successfully');
+            edit_rom_form.reset();
+            get_all_rom();
+        } else {
+            console.log('Failed to add Rom');
+        }
+    }
+
+    xhr.send(data);
+}
+
+
 
 
     function toggle_status(id, val) {
