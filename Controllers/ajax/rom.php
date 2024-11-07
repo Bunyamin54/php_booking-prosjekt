@@ -24,12 +24,12 @@ if (isset($_POST['add_rom'])) {
     // Room insertion query
     $q1 = "INSERT INTO `rom`(`name`, `areal`, `pris`, `kvalitet`, `voksen`, `barn`, `beskrivelse`) VALUES (?,?,?,?,?,?,?)";
     $values1 = [
-        $frm_data['name'], 
-        $frm_data['areal'], 
-        $frm_data['pris'], 
-        $frm_data['kvalitet'], 
-        $frm_data['voksen'], 
-        $frm_data['barn'], 
+        $frm_data['name'],
+        $frm_data['areal'],
+        $frm_data['pris'],
+        $frm_data['kvalitet'],
+        $frm_data['voksen'],
+        $frm_data['barn'],
         $frm_data['beskrivelse']
     ];
 
@@ -79,4 +79,113 @@ if (isset($_POST['add_rom'])) {
     // Return success or failure
     echo $flag ? 1 : 0;
 }
+
+
+if (isset($_POST['get_all_rom'])) {
+
+    $res = selectAll('rom');
+    $i = 0;
+
+
+
+    $data = "";
+    while ($row = mysqli_fetch_assoc($res)) {
+
+        if ($row['status'] == 1) {
+            $status = "<button   onclick='toggle_status($row[id],0)'  class='badge rounded-pill bg-success'>Ledig</button>";
+        } else {
+            $status = "<button   onclick='toggle_status($row[id],1)'  class='badge rounded-pill bg-danger'>Opptatt</button>";
+        }
+
+
+        $data .= "
+       
+                <tr class = 'align-middle'>
+
+                    <td> $i </td>
+                    <td> $row[name] </td>
+                    <td> $row[areal]sq. ft.</td>
+                
+                    <td> 
+                    <span class='badge rounded-pill bg-light text-dark'>
+                     Voksen: $row[voksen]
+                    </span> <br>
+                    <span class='badge rounded-pill bg-light text-dark'>
+                     Barn: $row[barn]
+                    </span>
+                    </td>
+
+                    <td>NOK $row[pris] </td>
+                    <td> $row[kvalitet] </td>
+                    <td> $status </td>
+                    <td> 
+                    
+                         <button  type='button' onclick='edit_details($row[id])'  class='btn btn-primary shadow-none btn-sm' data-bs-toggle='modal' data-bs-target='#edit-rom'>
+                        <i class='bi bi-pencil-square'></i>
+                            </button>
+                                    
+                    
+                    </td>
+
+                </tr>
+  
+                ";
+        $i++;
+    }
+
+    echo $data;
+}
+
+
+if (isset($_POST['get_rom'])) 
+{
+    $frm_data = filteration($_POST);
+  $res1 =  select( "SELECT * FROM `rom` WHERE `id` = ?", [$frm_data['get_rom']], "i");
+  $res2 =  select( "SELECT * FROM `rom_funksjoner` WHERE `rom_id` = ?", [$frm_data['get_rom']], "i");
+  $res3 =  select( "SELECT * FROM `rom_fasiliteter` WHERE `rom_id` = ?", [$frm_data['get_rom']], "i");
+
+
+  $romdata = mysqli_fetch_assoc($res1);
+    $funksjoner = [];
+    $fasiliteter = [];
+
+  
+    if(mysqli_num_rows($res2)>0) {
+       
+        while($row = mysqli_fetch_assoc($res2)) {
+            array_push($funksjoner, $row['funksjoner_id']);
+        }
+    } 
+
+    if(mysqli_num_rows($res3)>0) {
+       
+        while($row = mysqli_fetch_assoc($res3)) {
+            array_push($fasiliteter, $row['fasiliteter_id']);
+        }
+    } 
+
+     $data = [
+         'romdata' => $romdata,
+         'funksjoner' => $funksjoner,
+         'fasiliteter' => $fasiliteter
+     ];
+
+      $data = json_encode($data);
+        echo $data;
+}
+
+if (isset($_POST['toggle_status'])) {
+    $frm_data = filteration($_POST);
+
+    $q = "UPDATE `rom` SET `status` = ? WHERE `id` = ?";
+    $v = [$frm_data['value'], $frm_data['toggle_status']];
+
+    if (update($q, $v, "ii")) {
+        echo 1;
+    } else {
+        echo 0;
+    }
+}
+
+
 ?>

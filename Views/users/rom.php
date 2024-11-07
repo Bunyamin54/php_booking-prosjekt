@@ -39,6 +39,7 @@
 <body class="bg-light">
 
   <?php require_once '../partials/header.php'; ?>
+  <link rel="stylesheet" href="../../public/css/styles.css">
 
 
   <div class="my-5 px-4">
@@ -58,25 +59,25 @@
               </button>
               <div class="collapse navbar-collapse" id="filterDropdown">
                 <div class="border bg-light p-3 rounded mb-3">
-                  <h5 class="mb-3" style="font-size: 18px;">Check Availability</h5>
-                  <label class="form-label">Check-in</label>
+                  <h5 class="mb-3" style="font-size: 18px;">Sjekk ledig rom</h5>
+                  <label class="form-label">Sjekk-in</label>
                   <input type="date" class="form-control shadow-none mb-3">
-                  <label class="form-label">Check-out</label>
+                  <label class="form-label">Sjekk ut</label>
                   <input type="date" class="form-control shadow-none">
                   <div class="border bg-light p-3 rounded mb-3 mt-3">
-                    <h5 class="mb-3" style="font-size: 18px;">Facilities</h5>
+                    <h5 class="mb-3" style="font-size: 18px;">Fasiliteter</h5>
 
                     <div class="form-check">
                       <input type="checkbox" id="f1" class="form-check-input shadow-none me-1">
-                      <label class="form-check-label" for="f1">Facility en</label>
+                      <label class="form-check-label" for="f1">Fasilitet en</label>
                     </div>
                     <div class="form-check">
                       <input type="checkbox" id="f2" class="form-check-input shadow-none me-1">
-                      <label class="form-check-label" for="f2">Facility to</label>
+                      <label class="form-check-label" for="f2">Fasilitet to</label>
                     </div>
                     <div class="form-check">
                       <input type="checkbox" id="f3" class="form-check-input shadow-none me-1">
-                      <label class="form-check-label" for="f3">Facility tre</label>
+                      <label class="form-check-label" for="f3">Fasilitet tre</label>
                     </div>
 
                   </div>
@@ -85,11 +86,11 @@
                     <h5 class="mb-3" style="font-size: 18px;">Gjest</h5>
                     <div class="d-flex justify-content-between">
                       <div class="me-3 flex-grow-1">
-                        <label class="form-label">Adults</label>
+                        <label class="form-label">Voksen</label>
                         <input type="number" class="form-control shadow-none">
                       </div>
                       <div class="flex-grow-1">
-                        <label class="form-label">Children</label>
+                        <label class="form-label">Barn</label>
                         <input type="number" class="form-control shadow-none">
                       </div>
                     </div>
@@ -147,7 +148,7 @@
               <div class="card border-0 shadow room-card">
                 <img src="../../public/images/rooms/9.jpg" class="card-img-top">
                 <div class="card-body">
-                  <h5>Junior Suite med utsikt</h5>
+                  <h5>J-Suite med utsikt</h5>
                   <h5 class="mb-4">fra NOK 2000 per natt</h5>
                   <div class="features mb-4">
                     <h6 class="mb-1">Romdetaljer</h6>
