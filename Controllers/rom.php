@@ -703,8 +703,7 @@ adminLogin();
 
 
     function submit_edit_rom() {
-    console.log('funksjoner elements:', document.querySelectorAll('input[name="funksjoner[]"]'));
-    console.log('fasiliteter elements:', document.querySelectorAll('input[name="fasiliteter[]"]'));
+   
 
     let data = new FormData();
 
