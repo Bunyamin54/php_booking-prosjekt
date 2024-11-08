@@ -65,6 +65,47 @@ function setActive() {
     } 
     
 }
+  
+
+ let register_form = document.getElementById('register-form');
+
+ register_form.addEventListener('submit', function(e){
+     e.preventDefault();
+     let data = new FormData();
+
+     data.append('name', register_form.elements['name'].value);
+     data.append('email', register_form.elements['email'].value);
+     data.append('telefon', register_form.elements['telefon'].value);
+     data.append('adress', register_form.elements['adress'].value);
+     data.append('postadress', register_form.elements['postadress'].value);
+     data.append('dob', register_form.elements['dob'].value);
+     data.append('pass', register_form.elements['pass'].value);
+     data.append('cpass', register_form.elements['cpass'].value);
+     data.append('profile', register_form.elements['profile'].files[0]);
+     data.append('register', '');
+
+
+    var myModal = document.getElementById('registerModal');
+    var myModal = bootstrap.Modal.getInstance(myModal);
+    myModal.hide();
+
+    let xhr = new XMLHttpRequest();
+  xhr.open("POST", "ajax/login_register.php", true);
+  
+
+  xhr.onload = function() {
+   
+  }
+
+    xhr.send(data);
+
+
+ });
+
+
+
+
+
 setActive();
 
 </script>
