@@ -564,8 +564,45 @@ adminLogin();
       </form>
 
     </div>
-  </div>
+</div>
 
+
+<!-- rom image modal-->
+<div class="modal fade" id="rom-images" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title ">Rom Navn</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="border-bottom border-3 pb-3 mb-3">
+          <form id="add_image_form">
+          <label class="form-label fw-bold">Legge bilde  </label>
+          <input type="file" name="image"  accept=".jpg, .png, .webp, .jpeg" class="form-control shadow-none mb-3" required>
+          <button  class="btn custom-bg text-white shadow-none ">Add</button>
+          <input type="hidden" name="room_id">
+          </form>
+        </div>
+        <div class="table-responsive-lg" style="height: 350px; overflow-y: scroll;">
+              <table class="table table-hover border text-center">
+                <thead>
+                  <tr class="bg-dark text-light sticky-top">
+                    <th scope="col" width="60%">bilde</th>
+                    <th scope="col">Tommel</th>
+                    <th scope="col">Slett</th>
+                  </tr>
+                </thead>
+                <tbody id="rom-image-data">
+
+                </tbody>
+              </table>
+            </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 
   <?php require(__DIR__ . '/../public/js/script.php'); ?>
