@@ -32,9 +32,6 @@
 <!--  //? Added registration modal with form fields for user details -->
 <!-- //*  Register Modal -->
 
-
-
-
 <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -42,83 +39,53 @@
         <div class="modal-header">
           <i class="bi bi-person-lines-fill fs-3 me-2"></i>
           <h5 class="modal-title" id="registerModalLabel">Opprett en ny konto</h5>
-
           <button type="reset" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <span class="badge text-bg-light text-dark mb-3 text-wrap lh-base "> Notat: Detaljene dine må samsvare med ID-en din (ID kort, pass, førerkort, etc, som vil være nødvendig under innsjekking)</span>
+          <span class="badge text-bg-light text-dark mb-3 text-wrap lh-base">Notat: Detaljene dine må samsvare med ID-en din (ID kort, pass, førerkort, etc, som vil være nødvendig under innsjekking)</span>
           <div class="container fluid">
             <div class="row">
-
-              <div class="col md-6 ps-0 mb-3">
-
+              <div class="col-md-6 ps-0 mb-3">
                 <label class="form-label">Navn</label>
-                <input name="name" type="text" class="form-control shadow-none "required>
-
+                <input name="name" type="text" class="form-control shadow-none" required>
               </div>
-
-              <div class="col md-6 ps-0 mb-3">
-
-                <label class="form-label">Email </label>
+              <div class="col-md-6 ps-0 mb-3">
+                <label class="form-label">Email</label>
                 <input name="email" type="email" class="form-control shadow-none" required>
-
               </div>
-              <div class="col md-6 ps-0 mb-3">
-
-                <label class="form-label">Telefon </label>
-                <input name="telefon" type="number" class="form-control shadow-none"required>
-
+              <div class="col-md-6 ps-0 mb-3">
+                <label class="form-label">Telefon</label>
+                <input name="telefon" type="number" class="form-control shadow-none" required>
               </div>
 
               <div class="col-md-12 ps-0 mb-3">
 
                 <label class="form-label">Adress </label>
-                <textarea name="adress" class="form-control shadow-none" rows="1"required></textarea>
+                <textarea name="adress" class="form-control shadow-none" rows="1" required></textarea>
               </div>
-
               <div class="col-md-6 ps-0 mb-3">
-                <label class="form-label">Post Adressen </label>
-                <input name="postadress"  type="number" class="form-control shadow-none"required>
-
+                <label class="form-label">Post Adressen</label>
+                <input name="post_num" type="number" class="form-control shadow-none" required>
               </div>
-
               <div class="col-md-6 ps-0 mb-3">
                 <label for="birthDatePicker" class="form-label">Fødsels dato</label>
                 <input name="dob" id="birthDatePicker" type="text" class="form-control shadow-none" required>
               </div>
-
-
               <div class="col-md-6 ps-0 mb-3">
-                <label class="form-label">Passord </label>
+                <label class="form-label">Passord</label>
                 <input name="pass" type="password" class="form-control shadow-none" required>
-
               </div>
-
-
               <div class="col-md-6 ps-0 mb-3">
-
                 <label class="form-label">Bekreft passord</label>
                 <input name="cpass" type="password" class="form-control shadow-none" required>
               </div>
-
-              <!-- <div><button type="submit" class="btn btn-warning shadow-none me-lg-3 me-2">Register<button> -->
-
             </div>
-
-
             <div class="text-center my-1">
-              <button type="submit" class="btn btn-warning shadow-none "> Opprett konto </button>
+              <button type="submit" class="btn btn-warning shadow-none">Opprett konto</button>
             </div>
-
-
-
           </div>
         </div>
-
-
+      </form>
     </div>
   </div>
-  </form>
-</div>
-</div>
 </div>

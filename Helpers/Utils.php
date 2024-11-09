@@ -9,7 +9,7 @@ define('SITE_URL_IMG', 'http://127.0.0.1/php_booking-prosjekt/public/');
 define('ABOUT_IMG_PATH', SITE_URL_IMG . 'images/about/');
 define('CAROUSEL_IMG_PATH', SITE_URL_IMG . 'images/carousel/');
 define('FASILITETER_IMG_PATH', SITE_URL_IMG . 'images/fasiliteter/');
-
+define('USERS_IMG_PATH', SITE_URL_IMG . 'images/users/');
 
 
 
@@ -23,7 +23,15 @@ define('FASILITETER_FOLDER', 'fasiliteter/');
 
 
 
+
 //  /Applications/XAMPP/xamppfiles/htdocs
+
+
+ // sendgrid funksjoner 
+
+   define('SENDGRID_API_KEY',"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") ; 
+
+
 
 // ? Funksjon for å sjekke om administratoren er logget inn 
 
@@ -122,5 +130,9 @@ function uploadSVGImage($image, $folder)
     }
   }
 }
+
+
+
+
 
 ?>
