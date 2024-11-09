@@ -7,7 +7,8 @@
 
     <!-- // ? Definerer tittelen på nettsiden -->
 
-  <title>UIA Motel Kontakt</title>
+  
+  <title><?php echo $instillinger_r['site_title']?> UIA Motel Kontakt </title>
 
     <!-- // ? Inkluderer head.php for å hente head-innholdet  -->
 

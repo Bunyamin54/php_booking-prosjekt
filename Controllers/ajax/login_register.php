@@ -6,6 +6,7 @@ require('../../Config/Database.php');
 require('../../public/sendgrid/sendgrid-php.php');
 
 // key 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
+// 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
 
 function send_mail($uemail, $name, $token)
 {
@@ -21,7 +22,7 @@ function send_mail($uemail, $name, $token)
     "text/html",
     "
          Click the link confirm your email: <br>
-          <a href=' " . SITE_URL . "email_confirm.php?email=$uemail&$token=$token" . "'>        
+          <a href=' " . SITE_URL . "email_confirm.php?email_confirmation&email=$uemail&$token=$token" . "'>        
           Confirm Email       
           </a>     
          "

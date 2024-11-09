@@ -29,7 +29,7 @@ define('FASILITETER_FOLDER', 'fasiliteter/');
 
  // sendgrid funksjoner 
 
-   define('SENDGRID_API_KEY',"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") ; 
+   define('SENDGRID_API_KEY',"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") ; 
 
 
 

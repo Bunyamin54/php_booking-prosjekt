@@ -6,9 +6,10 @@
 
         <div class="col-lg-4 p-4">
 
-            <h3 class="h-font fw-bold fs-3 mb-2"> UIA MOTEL</h3>
+            <h3 class="h-font fw-bold fs-3 mb-2"> <?php echo $instillinger_r['site_title'] ?></h3>
 
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, mollitia dignissimos perspiciatis nam dolor delectus in qui eaque itaque amet? </p>
+            <p <?php echo $instillinger_r['site_om'] ?> >
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, mollitia dignissimos perspiciatis nam dolor delectus in qui eaque itaque amet? </p>
         </div>
 
         <div class="col-lg-4 p-4">
