@@ -54,7 +54,7 @@ if (isset($_POST['register'])) {
   }
 
   $u_exists = select(
-    "SELECT * FROM `user_cred` WHERE `email` = ? AND `telefon`=?LIMIT 1",
+    "SELECT * FROM `user_cred` WHERE `email` = ? OR `telefon`=?LIMIT 1",
 
     [$data['email'], $data['telefon']],
     "ss"
@@ -89,30 +89,10 @@ if (isset($_POST['register'])) {
   } else {
     echo 'failed';
   }
-
-
-
-
-
-  // * check user already exists  or not
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  exit;
 
 }
+
+
 
 ?>
