@@ -44,7 +44,6 @@ if (isset($_POST['register'])) {
 
   $data = filteration($_POST);
 
-
   //  * nmatch passord and confirm password
 
 
@@ -57,6 +56,7 @@ if (isset($_POST['register'])) {
     "SELECT * FROM `user_cred` WHERE `email` = ? OR `telefon`=?LIMIT 1",
 
     [$data['email'], $data['telefon']],
+
     "ss"
   );
 

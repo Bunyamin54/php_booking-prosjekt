@@ -9,11 +9,12 @@ adminLogin();
 
 if (isset($_POST['add_image'])) {
 
- 
+
 
     $img_r = uploadImage($_FILES['picture'], CAROUSEL_FOLDER);
 
     //  echo json_encode($img_r);
+
 
     if ($img_r == 'inv_img') {
         echo 'img_r';
@@ -59,20 +60,19 @@ if (isset($_POST['get_carousel'])) {
 }
 
 
-                if (isset($_POST['rem_image'])) 
-                {
-                    $frm_data = filteration($_POST);
-                    $values = [$frm_data['rem_image']];
+if (isset($_POST['rem_image'])) {
+    $frm_data = filteration($_POST);
+    $values = [$frm_data['rem_image']];
 
-                    $pre_q = "SELECT * FROM `carousel` WHERE `sr_no` = ?";
-                    $res = select($pre_q, $values, "i");
-                    $img = mysqli_fetch_assoc($res);
+    $pre_q = "SELECT * FROM `carousel` WHERE `sr_no` = ?";
+    $res = select($pre_q, $values, "i");
+    $img = mysqli_fetch_assoc($res);
 
-                    if (deleteImage($img['image'], CAROUSEL_FOLDER)) {
-                        $q = "DELETE FROM `carousel` WHERE `sr_no` = ?";
-                        $res = delete($q, $values, "i");
-                        echo $res;
-                    } else {
-                        echo 0;
-                    }
-                }
+    if (deleteImage($img['image'], CAROUSEL_FOLDER)) {
+        $q = "DELETE FROM `carousel` WHERE `sr_no` = ?";
+        $res = delete($q, $values, "i");
+        echo $res;
+    } else {
+        echo 0;
+    }
+}

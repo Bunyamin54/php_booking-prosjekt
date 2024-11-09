@@ -121,6 +121,8 @@
 
         xhr.onload = function() {
 
+            console.log(this.responseText);
+
             if (this.responseText == 'pass_mismatch') {
                 alert('danger', 'Passordene matcher ikke');
 
@@ -154,4 +156,5 @@
 
 
     setActive();
+
 </script>

@@ -6,8 +6,6 @@ let carousel_picture_inp = document.getElementById('carousel_picture_inp');
 
 
 
-
-
 carousel_s_form.addEventListener('submit', function(e) {
    e.preventDefault();
    add_image();
@@ -33,7 +31,7 @@ function add_image()
     var modal = bootstrap.Modal.getInstance(myModal);
     modal.hide();
 
- 
+   console.log(" response bela",this.responseText);
 
     if (this.responseText == 'inv_img') {
       alert('danger', 'Invalid image format or size');
