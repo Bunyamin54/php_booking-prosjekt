@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UIA Motel Fasiliteter</title>
+  
+  <title> <?php echo $instillinger_r['site_title']  ?> UIA Motel Fasiliteter </title>
 
 
 
@@ -28,7 +29,7 @@
   <?php require_once '../partials/header.php'; ?>
   <?php require_once 'login_registering.php'; ?>
 
-  <!-- <?php require_once './fasiliteter.php'; ?> -->
+  <!-- <?php require_once 'fasiliteter.php'; ?> -->
 
 
   <div class="my-5 px-4">

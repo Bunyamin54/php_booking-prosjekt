@@ -2,6 +2,7 @@
 
 require('../Helpers/Utils.php');
 
+
 adminLogin();
 
 
@@ -76,7 +77,7 @@ adminLogin();
 
         <div class="modal fade" id="carousel-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
-            <form id="carousel_s_form" enctype="multipart/form-data">
+            <form id="carousel_s_form" method="post" enctype="multipart/form-data">
 
               <div class="modal-content">
                 <div class="modal-header">
@@ -88,7 +89,7 @@ adminLogin();
                   <div class="mb-3">
 
                     <label class="form-label fw-bold">Bilder oss </label>
-                    <input type="file" name="carousel_picture" id="carousel_picture_inp" accept=".jpg, .png, .webp, .jpeg" class="form-control shadow-none" required>
+                    <input type="file" name="picture" id="carousel_picture_inp" accept=".jpg, .png, .webp, .jpeg" class="form-control shadow-none" required>
                   </div>
                 </div>
                 <div class="modal-footer">

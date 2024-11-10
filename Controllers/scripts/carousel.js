@@ -6,8 +6,6 @@ let carousel_picture_inp = document.getElementById('carousel_picture_inp');
 
 
 
-
-
 carousel_s_form.addEventListener('submit', function(e) {
    e.preventDefault();
    add_image();
@@ -62,7 +60,7 @@ function add_image()
   {
 
    let xhr = new XMLHttpRequest(); 
-  xhr.open("POST", "ajax/carousel_crud.php", true);
+  xhr.open("POST", "../ajax/carousel_crud.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function(){ 

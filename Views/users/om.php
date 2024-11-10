@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>UIA Motel Om oss</title>
+ 
+  <title> <?php echo $instillinger_r['site_title']  ?> UIA Motel Om oss </title>
 
     <!-- //?  Ekstern CSS for Swiper og egendefinerte stiler  -->
 

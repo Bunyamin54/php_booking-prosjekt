@@ -7,9 +7,9 @@
                <?php  
                $res = selectAll('carousel');
 
-
                while ($row = mysqli_fetch_assoc($res)) {
 
+      
 
                 $path = CAROUSEL_IMG_PATH;
                    echo <<<data
