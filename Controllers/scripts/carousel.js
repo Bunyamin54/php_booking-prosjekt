@@ -17,7 +17,7 @@ function add_image()
   let data = new FormData();
   
   data.append('picture', carousel_picture_inp.files[0]);
-  data.append('add_image', '');
+  data.append('add_image', '1');
 
 
   let xhr = new XMLHttpRequest();
