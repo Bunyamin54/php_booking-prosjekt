@@ -93,7 +93,7 @@
 
   function setActive() {
     let navbar = document.getElementById('nav-bar');
-    let a_tags = navbar.getElementTagName('a');
+    let a_tags = navbar.getElementsByTagName('a');
     for (i = 0; i < a_tags.length; i++) {
       let file = a_tags[i].href.split('/').pop();
       let file_name = file.split('.')[0];

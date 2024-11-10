@@ -76,7 +76,7 @@ adminLogin();
 
         <div class="modal fade" id="carousel-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
-            <form id="carousel_s_form" enctype="multipart/form-data">
+            <form id="carousel_s_form" method="post" enctype="multipart/form-data">
 
               <div class="modal-content">
                 <div class="modal-header">
