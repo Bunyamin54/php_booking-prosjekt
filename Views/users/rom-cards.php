@@ -78,7 +78,7 @@
          <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
             <img src="./images/rooms/9.jpg" class="card-img-top">
             <div class="card-body ">
-               <h5>Junior Suite med utsikt</h5>
+               <h5>J-Suite med utsikt</h5>
                <h5 class="mb-4">fra NOK 2000 per natt</h5>
                <div class="features mb-4">
                   <h6 class="mb-1">Romdetaljer </h6>
