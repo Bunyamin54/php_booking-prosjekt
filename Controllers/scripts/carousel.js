@@ -17,7 +17,7 @@ function add_image()
   let data = new FormData();
   
   data.append('picture', carousel_picture_inp.files[0]);
-  data.append('add_image', '1');
+  data.append('add_image', '');
 
 
   let xhr = new XMLHttpRequest();
@@ -31,7 +31,7 @@ function add_image()
     var modal = bootstrap.Modal.getInstance(myModal);
     modal.hide();
 
-   console.log(" response bela",this.responseText);
+ 
 
     if (this.responseText == 'inv_img') {
       alert('danger', 'Invalid image format or size');
@@ -60,7 +60,7 @@ function add_image()
   {
 
    let xhr = new XMLHttpRequest(); 
-  xhr.open("POST", "ajax/carousel_crud.php", true);
+  xhr.open("POST", "../ajax/carousel_crud.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function(){ 
