@@ -194,7 +194,7 @@ adminLogin();
 
 
   <?php require(__DIR__ . '/../public/js/script.php'); ?>
- <script src="scripts/funksjoner_fasiliteter.js"></script>
+ <script src="scripts/funksjoner_fasiliteter.js "></script>
 
 </body>
 

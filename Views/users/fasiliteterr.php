@@ -29,7 +29,7 @@
   <?php require_once '../partials/header.php'; ?>
   <?php require_once 'login_registering.php'; ?>
 
-  <!-- <?php require_once './fasiliteter.php'; ?> -->
+  <!-- <?php require_once 'fasiliteter.php'; ?> -->
 
 
   <div class="my-5 px-4">
