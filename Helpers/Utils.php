@@ -10,6 +10,7 @@ define('ABOUT_IMG_PATH', SITE_URL_IMG . 'images/about/');
 define('CAROUSEL_IMG_PATH', SITE_URL_IMG . 'images/carousel/');
 define('FASILITETER_IMG_PATH', SITE_URL_IMG . 'images/fasiliteter/');
 define('USERS_IMG_PATH', SITE_URL_IMG . 'images/users/');
+define('ROMS_IMG_PATH', SITE_URL_IMG . 'images/roms/');
 
 
 
@@ -20,6 +21,7 @@ define('UPLOAD_IMAGE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/php_booking-prosjekt/p
 define('ABOUT_FOLDER', 'about/');
 define('CAROUSEL_FOLDER', 'carousel/');
 define('FASILITETER_FOLDER', 'fasiliteter/');
+define('ROMS_FOLDER', 'roms/');
 
 
 

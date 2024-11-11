@@ -564,227 +564,52 @@ adminLogin();
       </form>
 
     </div>
-  </div>
+</div>
 
+
+<!-- rom image modal-->
+<div class="modal fade" id="rom-images" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title ">Rom Navn</h5>
+        <button type="button" class="btn-close shadow-nano" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="image-alert"></div>
+        <div class="border-bottom border-3 pb-3 mb-3">
+          <form id="add_image_form">
+          <label class="form-label fw-bold">Legge bilde  </label>
+          <input type="file" name="image"  accept=".jpg, .png, .webp, .jpeg" class="form-control shadow-none mb-3" required>
+          <button  class="btn custom-bg text-white shadow-none ">Add</button>
+          <input type="hidden" name="room_id">
+          </form>
+        </div>
+        <div class="table-responsive-lg" style="height: 350px; overflow-y: scroll;">
+              <table class="table table-hover border text-center">
+                <thead>
+                  <tr class="bg-dark text-light sticky-top">
+                    <th scope="col" width="60%">Image</th>
+                    <th scope="col">Thumb</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                </thead>
+                <tbody id="rom-image-data">
+
+                </tbody>
+              </table>
+            </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 
   <?php require(__DIR__ . '/../public/js/script.php'); ?>
 
-  <script>
-    let add_rom_form = document.getElementById('add_rom_form');
-
-    add_rom_form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      add_rom();
-
-    });
-
-
-    function add_rom() {
-      let data = new FormData();
-      data.append('add_rom', '');
-      data.append('name', add_rom_form.elements['name'].value);
-      data.append('areal', add_rom_form.elements['areal'].value);
-      data.append('pris', add_rom_form.elements['pris'].value);
-      data.append('kvalitet', add_rom_form.elements['kvalitet'].value);
-      data.append('voksen', add_rom_form.elements['voksen'].value);
-      data.append('barn', add_rom_form.elements['barn'].value);
-      data.append('beskrivelse', add_rom_form.elements['beskrivelse'].value);
-
-
-
-      let funksjoner = [];
-      document.querySelectorAll('input[name="funksjoner[]"]:checked').forEach(el => {
-        funksjoner.push(el.value);
-      });
-
-      let fasiliteter = [];
-      document.querySelectorAll('input[name="fasiliteter[]"]:checked').forEach(el => {
-        fasiliteter.push(el.value);
-      });
-
-
-      data.append('funksjoner', JSON.stringify(funksjoner));
-
-      data.append('fasiliteter', JSON.stringify(fasiliteter));
-
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", "ajax/rom.php", true);
-
-      xhr.onload = function() {
-
-
-        var myModal = document.getElementById('add-rom');
-        var modal = bootstrap.Modal.getInstance(myModal);
-        modal.hide();
-
-
-
-        if (this.responseText == 1) {
-          alert('success', 'Rom added successfully');
-          add_rom_form.reset();
-          get_all_rom();
-        } else {
-          console.log('Failed to add Rom');
-        }
-
-      }
-
-      xhr.send(data);
-
-
-    }
-
-
-    function get_all_rom() {
-
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", "ajax/rom.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-      xhr.onload = function() {
-
-        document.getElementById('rom-data').innerHTML = this.responseText;
-      }
-
-      xhr.send('get_all_rom');
-
-    }
-
-
-    let edit_rom_form = document.getElementById('edit_rom_form');
-
-    function edit_details(id)
-
-    {
-
-
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", "ajax/rom.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-      xhr.onload = function() {
-        let data = JSON.parse(this.responseText);
-
-        edit_rom_form.elements['name'].value = data.romdata.name;
-        edit_rom_form.elements['areal'].value = data.romdata.areal;
-        edit_rom_form.elements['pris'].value = data.romdata.pris;
-        edit_rom_form.elements['kvalitet'].value = data.romdata.kvalitet;
-        edit_rom_form.elements['voksen'].value = data.romdata.voksen;
-        edit_rom_form.elements['barn'].value = data.romdata.barn;
-        edit_rom_form.elements['beskrivelse'].value = data.romdata.beskrivelse;
-        edit_rom_form.elements['rom_id'].value = data.romdata.id;
-
-        document.querySelectorAll('input[name="funksjoner[]"]').forEach(el => {
-          if (el.checked) {
-            funksjoner.push(el.value);
-          }
-        });
-
-        document.querySelectorAll('input[name="fasiliteter[]"]').forEach(el => {
-          if (el.checked) {
-            fasiliteter.push(el.value);
-          }
-        });
-
-
-      }
-
-      xhr.send('get_rom=' + id);
-
-    }
-
-
-    edit_rom_form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      submit_edit_rom();
-
-    });
-
-
-    function submit_edit_rom() {
-   
-
-    let data = new FormData();
-
+  <script src="scripts/rom.js">   </script>
     
-    data.append('edit_rom', '');
-    data.append('rom_id', edit_rom_form.elements['rom_id'].value);
-    data.append('areal', edit_rom_form.elements['areal'].value);
-    data.append('pris', edit_rom_form.elements['pris'].value);
-    data.append('kvalitet', edit_rom_form.elements['kvalitet'].value);
-    data.append('voksen', edit_rom_form.elements['voksen'].value);
-    data.append('barn', edit_rom_form.elements['barn'].value);
-    data.append('beskrivelse', edit_rom_form.elements['beskrivelse'].value);
-
-    // Funksjoner için değerleri toplama
-    let funksjoner = [];
-    document.querySelectorAll('input[name="funksjoner[]"]:checked').forEach(el => {
-        funksjoner.push(el.value);
-    });
-
-    // Fasiliteter için değerleri toplama
-    let fasiliteter = [];
-    document.querySelectorAll('input[name="fasiliteter[]"]:checked').forEach(el => {
-        fasiliteter.push(el.value);
-    });
-
-    data.append('funksjoner', JSON.stringify(funksjoner));
-    data.append('fasiliteter', JSON.stringify(fasiliteter));
-
-    let xhr = new XMLHttpRequest();
-    xhr.open("POST", "ajax/rom.php", true);
-
-    xhr.onload = function() {
-        var myModal = document.getElementById('edit-rom');
-        var modal = bootstrap.Modal.getInstance(myModal);
-        modal.hide();
-
-        if (this.responseText == 1) {
-            alert('success', 'Rom data added successfully');
-            edit_rom_form.reset();
-            get_all_rom();
-        } else {
-            console.log('Failed to add Rom');
-        }
-    }
-
-    xhr.send(data);
-}
-
-
-
-
-    function toggle_status(id, val) {
-
-      let xhr = new XMLHttpRequest();
-      xhr.open("POST", "ajax/rom.php", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
-      xhr.onload = function() {
-
-        if (this.responseText == 1) {
-          alert('success', 'Status updated successfully');
-          get_all_rom();
-        } else {
-          alert('danger', 'Failed to update status');
-        }
-
-
-      }
-
-      xhr.send('toggle_status=' + id + '&value=' + val);
-
-    }
-
-
-
-
-
-    window.onload = function() {
-      get_all_rom();
-    }
-  </script>
 </body>
 
 </html>

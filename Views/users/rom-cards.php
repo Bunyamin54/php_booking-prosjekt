@@ -1,4 +1,4 @@
-<!--   // ? Vår rommet (Our Rooms Section Header) -->
+<!--   // ? Vår rommet (Our Roms Section Header) -->
 
 <h2 class="mt-5 pl-4 mb-4 text-center fw-bold h-font">Våre Rom</h2>
 <div class="container">
@@ -7,7 +7,7 @@
       <div class="col-lg-4 col-md-6 my-3">
 
          <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-            <img src="./images/rooms/11.jpeg" class="card-img-top">
+            <img src="./images/roms/11.jpeg" class="card-img-top">
             <div class="card-body ">
 
                <!--   // ? Single Room Card (Enkeltrom) -->
@@ -76,7 +76,7 @@
       <div class="col-lg-4 col-md-6 my-3">
 
          <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-            <img src="./images/rooms/9.jpg" class="card-img-top">
+            <img src="./images/roms/9.jpg" class="card-img-top">
             <div class="card-body ">
                <h5>J-Suite med utsikt</h5>
                <h5 class="mb-4">fra NOK 2000 per natt</h5>
@@ -135,7 +135,7 @@
       <div class="col-lg-4 col-md-6 my-3">
 
          <div class="card border-0 shadow" style="max-width: 350px; margin:auto;">
-            <img src="./images/rooms/10.jpg" class="card-img-top">
+            <img src="./images/roms/10.jpg" class="card-img-top">
             <div class="card-body ">
 
                <!--   // ? Double Family Room Card (Dobbel familierom) -->
@@ -202,7 +202,7 @@
 
    <div class="col-lg-12 text-center mt-5">
 
-      <!--   // ? More Rooms Button -->
+      <!--   // ? More Roms Button -->
 
       <a href="#" class="btn btn-sm btn-outline-success rounded-0 fw-bold shadow-none ">Mer rom>>></a>
    </div>
