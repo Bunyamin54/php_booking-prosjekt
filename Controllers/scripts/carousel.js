@@ -21,7 +21,7 @@ function add_image()
 
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "../ajax/carousel_crud.php", true);
+  xhr.open("POST", "./ajax/carousel_crud.php", true);
 
 
   xhr.onload = function() {
@@ -60,7 +60,7 @@ function add_image()
   {
 
    let xhr = new XMLHttpRequest(); 
-  xhr.open("POST", "../ajax/carousel_crud.php", true);
+  xhr.open("POST", "./ajax/carousel_crud.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function(){ 
@@ -79,7 +79,7 @@ function add_image()
 
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "../ajax/carousel_crud.php", true);
+  xhr.open("POST", "./ajax/carousel_crud.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {

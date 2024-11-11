@@ -87,7 +87,7 @@ function edit_details(id)
 
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "ajax/rom.php", true);
+  xhr.open("POST", "./ajax/rom.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -160,7 +160,7 @@ data.append('funksjoner', JSON.stringify(funksjoner));
 data.append('fasiliteter', JSON.stringify(fasiliteter));
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 xhr.onload = function() {
     var myModal = document.getElementById('edit-rom');
@@ -185,7 +185,7 @@ xhr.send(data);
 function toggle_status(id, val) {
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "ajax/rom.php", true);
+  xhr.open("POST", "./ajax/rom.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -221,7 +221,7 @@ data.append('add_image', '');
 
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 
 xhr.onload = function() {
@@ -252,7 +252,7 @@ function rom_images(id,rname) {
   add_image_form.elements['image'].value = '';
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "ajax/rom.php", true);
+  xhr.open("POST", "./ajax/rom.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -275,7 +275,7 @@ data.append('rem_image', '');
 
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 
 xhr.onload = function() {
@@ -310,7 +310,7 @@ data.append('thumb_image', '');
 
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 
 xhr.onload = function() {
@@ -342,7 +342,7 @@ data.append('rom_id', rom_id);
 data.append('remove_rom', '');
 let xhr = new XMLHttpRequest();
 
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 xhr.onload = function() {
 if (this.responseText == 1) {
