@@ -13,7 +13,7 @@ if (isset($_POST['add_image'])) {
 
     $img_r = uploadImage($_FILES['picture'], CAROUSEL_FOLDER);
 
-      echo json_encode($img_r);
+   
 
 
     if ($img_r == 'inv_img') {

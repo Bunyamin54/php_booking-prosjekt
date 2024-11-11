@@ -582,7 +582,7 @@ adminLogin();
           <label class="form-label fw-bold">Legge bilde  </label>
           <input type="file" name="image"  accept=".jpg, .png, .webp, .jpeg" class="form-control shadow-none mb-3" required>
           <button  class="btn custom-bg text-white shadow-none ">Add</button>
-          <input type="hidden" name="room_id">
+          <input type="hidden" name="rom_id">
           </form>
         </div>
         <div class="table-responsive-lg" style="height: 350px; overflow-y: scroll;">

@@ -21,7 +21,7 @@ function add_image()
 
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "ajax/carousel_crud.php", true);
+  xhr.open("POST", "./ajax/carousel_crud.php", true);
 
 
   xhr.onload = function() {
@@ -34,7 +34,7 @@ function add_image()
  
 
     if (this.responseText == 'inv_img') {
-      alert('danger', 'Invalid image format or size');
+      alert('danger', 'Invalid image format');
     } else if (this.responseText == 'inv_size') {
       alert('danger', 'Image size should be less than 2mb!');
 
@@ -60,11 +60,11 @@ function add_image()
   {
 
    let xhr = new XMLHttpRequest(); 
-  xhr.open("POST", "../ajax/carousel_crud.php", true);
+  xhr.open("POST", "./ajax/carousel_crud.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function(){ 
-    document.getElementById('carousel-data').innerHTML = this.responseText;
+    document.getElementById('carousel-data').innerHTML=this.responseText;
 
   }
   
@@ -79,7 +79,7 @@ function add_image()
 
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "ajax/carousel_crud.php", true);
+  xhr.open("POST", "./ajax/carousel_crud.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {

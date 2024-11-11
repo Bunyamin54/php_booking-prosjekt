@@ -140,7 +140,7 @@ adminLogin();
             <p class="card-text">
 
 
-              No customers will be allowed to book hotel room , when the site is shutdown.
+              No customers will be allowed to book hotel rom , when the site is shutdown.
 
 
             </p>

@@ -15,7 +15,7 @@ function add_funksjoner() {
 
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "../ajax/funksjoner_fasiliteter.php", true);
+  xhr.open("POST", "./ajax/funksjoner_fasiliteter.php", true);
 
   xhr.onload = function() {
    
@@ -42,7 +42,7 @@ function add_funksjoner() {
 function get_funksjoner() {
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "../ajax/funksjoner_fasiliteter.php", true);
+  xhr.open("POST", "./ajax/funksjoner_fasiliteter.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -57,7 +57,7 @@ function get_funksjoner() {
 function rem_funksjoner(val) {
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "../ajax/funksjoner_fasiliteter.php", true);
+  xhr.open("POST", "./ajax/funksjoner_fasiliteter.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -66,7 +66,7 @@ function rem_funksjoner(val) {
       alert('success', 'Funksjoner removed successfully');
       get_funksjoner();
     } else if (this.responseText == 'rom_added') {
-      alert('danger', 'Funksjoner is added in room!');
+      alert('danger', 'Funksjoner is added in rom!');
     } else {
       alert('danger', 'Server down!');
     }
@@ -91,7 +91,7 @@ function add_fasiliteter() {
   
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "../ajax/funksjoner_fasiliteter.php", true);
+  xhr.open("POST", "./ajax/funksjoner_fasiliteter.php", true);
 
   xhr.onload = function() {
     
@@ -124,7 +124,7 @@ function add_fasiliteter() {
 function get_fasiliteter() {
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "../ajax/funksjoner_fasiliteter.php", true);
+  xhr.open("POST", "./ajax/funksjoner_fasiliteter.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -139,7 +139,7 @@ function get_fasiliteter() {
 function rem_fasiliteter(id) {
  
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "../ajax/funksjoner_fasiliteter.php", true);
+  xhr.open("POST", "./ajax/funksjoner_fasiliteter.php", true);
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -148,7 +148,7 @@ function rem_fasiliteter(id) {
       alert('success', 'Fasiliteter removed successfully');
       get_fasiliteter();
     } else if (this.responseText == 'rom_added') {
-      alert('danger', 'Fasiliteter is added in room!');
+      alert('danger', 'Fasiliteter is added in rom!');
     } else {
       alert('danger', 'Server down!');
     }

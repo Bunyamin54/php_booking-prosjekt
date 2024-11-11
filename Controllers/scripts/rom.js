@@ -87,7 +87,7 @@ function edit_details(id)
 
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "ajax/rom.php", true);
+  xhr.open("POST", "./ajax/rom.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -160,7 +160,7 @@ data.append('funksjoner', JSON.stringify(funksjoner));
 data.append('fasiliteter', JSON.stringify(fasiliteter));
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 xhr.onload = function() {
     var myModal = document.getElementById('edit-rom');
@@ -185,7 +185,7 @@ xhr.send(data);
 function toggle_status(id, val) {
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "ajax/rom.php", true);
+  xhr.open("POST", "./ajax/rom.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -216,12 +216,12 @@ function add_image()
 let data = new FormData();
 
 data.append('image', add_image_form.elements['image'].files[0]);
-data.append('room_id', add_image_form.elements['room_id'].value[0]);
+data.append('rom_id', add_image_form.elements['rom_id'].value[0]);
 data.append('add_image', '');
 
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 
 xhr.onload = function() {
@@ -236,7 +236,7 @@ if (this.responseText == 'inv_img') {
   alert('error', 'Error in uploading image','image-alert');
 } else {
   alert('success', 'new Image added ','image-alert');
-  room_images(add_image_form.elements['room_id'].value,document.querySelector("#room-images .modal-title").innerText);
+  rom_images(add_image_form.elements['rom_id'].value,document.querySelector("#rom-images .modal-title").innerText);
   add_image_form.reset();
 }
 
@@ -246,13 +246,13 @@ xhr.send(data);
 
 
 }
-function room_images(id,rname) {
-  document.querySelector("#room-images .modal-title").innerText =rname;
-  add_image_form.elements['room_id'].value = id;
+function rom_images(id,rname) {
+  document.querySelector("#rom-images .modal-title").innerText =rname;
+  add_image_form.elements['rom_id'].value = id;
   add_image_form.elements['image'].value = '';
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "ajax/rom.php", true);
+  xhr.open("POST", "./ajax/rom.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {
@@ -260,29 +260,29 @@ document.getElementById('rom-image-data').innerHTML = this.responseText;
 
   }
 
-  xhr.send('get_room_images='+id);
+  xhr.send('get_rom_images='+id);
 
   
 }
 add_image
-function rem_image(img_id,room_id){
+function rem_image(img_id,rom_id){
 
 let data = new FormData();
 
 data.append('image_id', img_id);
-data.append('room_id',room_id);
+data.append('rom_id',rom_id);
 data.append('rem_image', '');
 
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 
 xhr.onload = function() {
 
 if (this.responseText == 1) {
   alert('success', 'image Removed! ','image-alert');
-  room_images(room_id.value,document.querySelector("#room-images .modal-title").innerText);
+  rom_images(rom_id.value,document.querySelector("#rom-images .modal-title").innerText);
 
 
 }
@@ -300,24 +300,24 @@ xhr.send(data);
 }
 add_image
 
-function thumb_image(img_id,room_id){
+function thumb_image(img_id,rom_id){
 
 let data = new FormData();
 
 data.append('image_id', img_id);
-data.append('room_id',room_id);
+data.append('rom_id',rom_id);
 data.append('thumb_image', '');
 
 
 let xhr = new XMLHttpRequest();
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 
 xhr.onload = function() {
 
 if (this.responseText == 1) {
 alert('success', 'image Thumbnail Chancged! ','image-alert');
-room_images(room_id.value,document.querySelector("#room-images .modal-title").innerText);
+rom_images(rom_id.value,document.querySelector("#rom-images .modal-title").innerText);
 
 
 }
@@ -335,22 +335,22 @@ xhr.send(data);
 }
 add_image
 
-function remove_room(room_id){
-if(confirm("Are you sure, you want to delete this room?")){
+function remove_rom(rom_id){
+if(confirm("Are you sure, you want to delete this rom?")){
 let data = new FormData();
-data.append('room_id', room_id);
-data.append('remove_room', '');
+data.append('rom_id', rom_id);
+data.append('remove_rom', '');
 let xhr = new XMLHttpRequest();
 
-xhr.open("POST", "ajax/rom.php", true);
+xhr.open("POST", "./ajax/rom.php", true);
 
 xhr.onload = function() {
 if (this.responseText == 1) {
-alert('success', 'room removed');
+alert('success', 'rom removed');
 get_all_rom();
 }
 else {
-alert('error', 'room removal failed!');
+alert('error', 'rom removal failed!');
 
 }
 
