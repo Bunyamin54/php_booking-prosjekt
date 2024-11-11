@@ -10,13 +10,13 @@
             <img src="./images/roms/11.jpeg" class="card-img-top">
             <div class="card-body ">
 
-               <!--   // ? Single Room Card (Enkeltrom) -->
+               <!--   // ? Single Rom Card (Enkeltrom) -->
 
                <h5>Enkeltrom</h5>
                <h5 class="mb-4">fra NOK 1500 per natt</h5>
                <div class="features mb-4">
 
-                  <!-- //? Room Details -->
+                  <!-- //? Rom Details -->
 
                   <h6 class="mb-1">Romdetaljer </h6>
                   <span class="badge text-bg-light text-success mb-3 text-wrap ">
@@ -138,13 +138,13 @@
             <img src="./images/roms/10.jpg" class="card-img-top">
             <div class="card-body ">
 
-               <!--   // ? Double Family Room Card (Dobbel familierom) -->
+               <!--   // ? Double Family Rom Card (Dobbel familierom) -->
 
                <h5>Dobbel familierom</h5>
                <h5 class="mb-4">fra NOK 2500 per natt</h5>
                <div class="features mb-4">
 
-                  <!-- //? Room Details -->
+                  <!-- //? Rom Details -->
 
                   <h6 class="mb-1">Romdetaljer </h6>
                   <span class="badge text-bg-light text-success mb-3 text-wrap ">

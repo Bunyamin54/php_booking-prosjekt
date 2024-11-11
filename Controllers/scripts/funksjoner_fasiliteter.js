@@ -66,7 +66,7 @@ function rem_funksjoner(val) {
       alert('success', 'Funksjoner removed successfully');
       get_funksjoner();
     } else if (this.responseText == 'rom_added') {
-      alert('danger', 'Funksjoner is added in room!');
+      alert('danger', 'Funksjoner is added in rom!');
     } else {
       alert('danger', 'Server down!');
     }
@@ -148,7 +148,7 @@ function rem_fasiliteter(id) {
       alert('success', 'Fasiliteter removed successfully');
       get_fasiliteter();
     } else if (this.responseText == 'rom_added') {
-      alert('danger', 'Fasiliteter is added in room!');
+      alert('danger', 'Fasiliteter is added in rom!');
     } else {
       alert('danger', 'Server down!');
     }
