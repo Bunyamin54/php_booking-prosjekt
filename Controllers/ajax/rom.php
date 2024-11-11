@@ -390,7 +390,7 @@ if (isset($_POST['remove_rom'])) {
     
     $res2 = delete ("DELETE FROM `room_images` WHERE  `room_id`= ?",[$frm_data['room_id']],'i');
     $res3 = delete ("DELETE FROM `rom_funksjoner` WHERE  `rom_id`= ?",[$frm_data['rom_id']],'i');
-    $res4 = delete ("DELETE FROM `room_fasiliteter` WHERE  `rom_id`= ?",[$frm_data['rom_id']],'i');
+    $res4 = delete ("DELETE FROM `rom_fasiliteter` WHERE  `rom_id`= ?",[$frm_data['rom_id']],'i');
     $res5 = update ("UPDATE `rom` SET `removed`=?  WHERE  `id`= ?",[1,$frm_data['rom_id']],'ii');
 
     if($res2 || $res3 || $res4 || $res5){
