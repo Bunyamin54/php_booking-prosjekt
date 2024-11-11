@@ -81,7 +81,7 @@ public/
 │   │   ├── about/
 │   │   ├── carousel/
 │   │   ├── fasilitetsvg/
-│   │   └── rooms/
+│   │   └── roms/
 │   └── js/
 │       ├── script.php
 │       └── index.php
