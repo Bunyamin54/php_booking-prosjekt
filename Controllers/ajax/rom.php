@@ -298,7 +298,7 @@ if (isset($_POST['get_rom_images'])) {
     $frm_data = filteration($_POST);
     $res = select("SELECT * FROM `rom_images` WHERE `rom_id` =? " , [$frm_data['get_rom_images']],'i');
     
-    $path = romS_IMG_PATH;
+    $path = ROMS_IMG_PATH;
      while ($row = mysqli_fetch_assoc($res)) {
         if($row['thumb']==1){
             $thumb_btn = "<i class='bi bi-check-lg text-light bg-success px-2 py-1 rounded fs-5'></i>";

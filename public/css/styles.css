@@ -137,4 +137,10 @@
     #main-content {
       margin-top: 60px ;
     }
+
+    .d-flex {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+  }
   }
