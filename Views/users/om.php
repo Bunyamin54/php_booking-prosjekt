@@ -60,7 +60,7 @@
     <div class="col-lg-3 col-md-6 mb-4 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
       <img src="../../public/images/about/hotel.svg" width="70px">
-      <hi class="mt-3">100+ ROOMS</hi>
+      <hi class="mt-3">100+ ROMS</hi>
       </div>
     </div>
     <div class="col-lg-3 col-md-6 mb-4 px-4">
@@ -78,7 +78,7 @@
     <div class="col-lg-3 col-md-6 mb-4 px-4">
       <div class="bg-white rounded shadow p-4 border-top border-4 text-center box">
       <img src="../../public/images/about/hotel.svg" width="70px">
-      <hi class="mt-3">100+ ROOMS</hi>
+      <hi class="mt-3">100+ ROMS</hi>
       </div>
     </div>
   </div>
