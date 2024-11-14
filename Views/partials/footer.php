@@ -152,6 +152,49 @@
     });
 
 
+  let login_form = document.getElementById('login-form');
+
+
+  login_form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let data = new FormData();
+
+        data.append('email_mob', login_form.elements['email_mob'].value);
+        data.append('pass', login_form.elements['pass'].value);
+        data.append('login', '');   
+
+        var myModal = document.getElementById('loginModal');
+        var myModal = bootstrap.Modal.getInstance(myModal);
+        myModal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "../../Controllers/ajax/login_register.php", true);
+
+
+        xhr.onload = function() {
+
+            if (this.responseText == 'inv_email_mob') {
+                alert('danger', 'Invalid email or mobile number');
+
+            } else if (this.responseText == 'not_verified') {
+                alert('danger', 'Email is not verified');
+
+            }  else if (this.responseText == 'inactive') {
+                alert('danger', 'Account is blocked Please contact admin');
+
+            } else if (this.responseText == 'invalid_pass') {
+                alert('success', 'Invalid password');
+        
+            } else {
+                window.location = window.location.pathname;
+            }
+
+
+        }
+        xhr.send(data);
+
+
+    });
 
 
 

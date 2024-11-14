@@ -6,6 +6,7 @@
 <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
+      <form id="login-form">
       <div class="modal-header">
         <i class="bi bi-person-circle fs-3 me-2"></i>
         <h5 class="modal-title" id="loginModalLabel">Logg inn</h5>
@@ -13,18 +14,19 @@
       </div>
       <div class="modal-body">
         <div class="mb-3">
-          <label class="form-label">Email address</label>
-          <input type="email" class="form-control shadow-none">
+          <label class="form-label">Email/Mobile</label>
+          <input type="text" name="email_mob" required class="form-control shadow-none">
         </div>
         <div class="mb-3">
           <label class="form-label">Password</label>
-          <input type="password" class="form-control shadow-none">
+          <input type="password" name="pass" required class="form-control shadow-none">
         </div>
         <div class="d-flex align-items-center justify-content-between mt-3">
           <button type="submit" class="btn btn-warning shadow-none me-lg-3 me-2">Logg inn</button>
           <a href="javascript:void(0)" class="text-secondary text-decoration-none mt-2">Glemt passord?</a>
         </div>
       </div>
+</form>
     </div>
   </div>
 </div>

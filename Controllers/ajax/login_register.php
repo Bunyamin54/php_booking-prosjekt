@@ -12,7 +12,7 @@ function send_mail($uemail, $name, $token)
 {
 
   $email = new \SendGrid\Mail\Mail();
-  $email->setFrom("bunyaming@uia.com", "UIA Motel User");
+  $email->setFrom("SENDGRID_EMAIL", "SENDGRID_NAME");
   $email->setSubject("Account Confirmation");
 
   $email->addTo("$email, $name");
@@ -90,6 +90,53 @@ if (isset($_POST['register'])) {
     echo 'failed';
   }
   exit;
+
+}
+
+if (isset($_POST['login']))  
+
+
+{
+
+$data = filteration($_POST);
+
+$u_exists = select(
+  "SELECT * FROM `user_cred` WHERE `email` = ? OR `telefon` = ? LIMIT 1",
+
+  [$data['email_mob'], $data['email_mob']],
+  "ss"
+);
+
+if (mysqli_num_rows($u_exists) == 0) {
+
+  echo 'inv_email_mob';
+
+
+} 
+else {
+$u_fetch = mysqli_fetch_assoc($u_exists);
+if($u_fetch['is verified'] == 0) {
+    echo 'not_verified';  
+  } 
+  else if($u_fetch['status']==0) {
+      echo 'inactive';
+    } else {
+
+      if (!password_verify($data['pass'], $u_fetch['password'])) {
+        echo 'invalid_pass';
+      } else {
+        session_start();
+        $_SESSION['login'] = true;
+        $_SESSION['uID'] = $u_fetch['id'];
+        $_SESSION['uName'] = $u_fetch['name'];
+        $_SESSION['uTelefon'] = $u_fetch['telefon'];
+        
+        echo 1;
+      }
+    }
+
+  }
+ 
 
 }
 

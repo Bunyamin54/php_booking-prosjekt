@@ -40,6 +40,12 @@
                 </li>
             </ul>
             <div class="d-flex">
+  
+
+              <?php
+            
+                print_r($_SESSION);
+              ?>
                 <button type="button" class="btn btn-outline-success shadow-none me-lg-2 me-3" data-bs-toggle="modal" data-bs-target="#loginModal">
                     Logg inn
                 </button>
