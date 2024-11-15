@@ -3,10 +3,9 @@
 
 require('../../Helpers/Utils.php');
 require('../../Config/Database.php');
-require('../../public/sendgrid/sendgrid-php.php');
+require('../../sendgrid/sendgrid.php');
 
-// key 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
-// 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
+// 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
 
 function send_mail($uemail, $name, $token)
 {
@@ -15,7 +14,7 @@ function send_mail($uemail, $name, $token)
   $email->setFrom("SENDGRID_EMAIL", "SENDGRID_NAME");
   $email->setSubject("Account Confirmation");
 
-  $email->addTo("$email, $name");
+  $email->addTo("$uemail, $name");
 
 
   $email->addContent(
@@ -80,7 +79,7 @@ if (isset($_POST['register'])) {
   $enc_pass = password_hash($data['pass'], PASSWORD_BCRYPT);
 
   $query = "INSERT INTO `user_cred` (`name`, `email`,  `telefon`,`adress`, `post_num`, `dob`,
-   `password`, `token`) VALUES ('?', '?', '?', '?', '?', '?', '?', '?')";
+   `password`, `token`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
   $values = [$data['name'], $data['email'], $data['telefon'], $data['adress'],  $data['post_num'], $data['dob'], $enc_pass, $token];
 

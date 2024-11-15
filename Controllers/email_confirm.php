@@ -2,8 +2,8 @@
 
 <?php
 
-require('../../Helpers/Utils.php');
-require('../../Config/Database.php');
+require('../Helpers/Utils.php');
+require('../Config/Database.php');
 
 
 if (isset($_GET['email_confirmation'])) {
@@ -22,7 +22,7 @@ if (isset($_GET['email_confirmation'])) {
 
         if ($fetch['is_verified'] == 1) {
             echo "<script>alert('Email already verified!') </script>";
-            redirect('../../public/index.php');
+            redirect('../public/index.php');
         } else {
 
             $update = update("UPDATE `user_cred` SET `is_verified` = ? WHERE `id` = ?", [1, $fetch['id']], "ii");
@@ -33,11 +33,11 @@ if (isset($_GET['email_confirmation'])) {
                 echo "<script>alert('Email verification failed!') </script>";
             }
 
-            redirect('../../public/index.php');
+            redirect('../public/index.php');
         }
     } else {
         echo "<script>alert('Invalid link!') </script>";
-        redirect('../../public/index.php');
+        redirect('../public/index.php');
     }
 }
 

@@ -14,7 +14,12 @@
   
 
   session_start();
-  
+  $_SESSION['login'] = true ;
+  $_SESSION['uID'] = $u_fetch['id'];
+  $_SESSION['uName'] = $u_fetch['name'];
+  $_SESSION['u'] = $u_fetch['telefon'];
+ 
+
   
   
   ?>  
