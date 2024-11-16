@@ -21,6 +21,8 @@
     
 // ? Inkluder komponentene fra forskjellige visningsfiler
 
+
+
   require_once '../Views/partials/header.php';
   require_once '../Views/users/hjem.php';
   require_once '../Views/users/availability-form.php';
@@ -29,7 +31,9 @@
   require_once '../Views/users/anmeldelser.php';
   require_once '../Views/users/adressen-var.php';
   require_once '../Views/users/login_registering.php';
+  // require_once '../Controllers/ajax/login_register.php';
   require_once '../Views/partials/footer.php';
+
 
   ?>
 

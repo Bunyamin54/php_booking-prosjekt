@@ -1,9 +1,14 @@
 
 <?php
 
-require('../../Helpers/Utils.php');
-require('../../Config/Database.php');
-require('../../sendgrid/sendgrid.php');
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+
+
+require('../Helpers/Utils.php');
+require('../Config/Database.php');
+require('../sendgrid/sendgrid.php');
+
 
 // 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
 
@@ -14,7 +19,7 @@ function send_mail($uemail, $name, $token)
   $email->setFrom("SENDGRID_EMAIL", "SENDGRID_NAME");
   $email->setSubject("Account Confirmation");
 
-  $email->addTo("$uemail, $name");
+  $email->addTo($uemail, $name);
 
 
   $email->addContent(
@@ -52,7 +57,7 @@ if (isset($_POST['register'])) {
   }
 
   $u_exists = select(
-    "SELECT * FROM `user_cred` WHERE `email` = ? OR `telefon`=?LIMIT 1",
+    "SELECT * FROM `user_cred` WHERE `email` = ? OR `telefon`= ? LIMIT 1",
 
     [$data['email'], $data['telefon']],
 
