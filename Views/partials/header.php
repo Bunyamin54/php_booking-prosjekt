@@ -28,7 +28,7 @@
                     <li class="nav-item">
                         <a class="nav-link me-2" href="/php_booking-prosjekt/Views/users/rom.php">Rom</a>
                     </li>
-                  
+
                     <li class="nav-item">
                         <a class="nav-link me-2" href="/php_booking-prosjekt/Views/users/fasiliteterr.php">Fasiliteter</a>
                     </li>
@@ -40,14 +40,46 @@
                     </li>
                 </ul>
                 <div class="d-flex">
+                    <?php
+                    if (isset($_SESSION['login']) && $_SESSION['login'] == true) {
+                        $path = $_SERVER['DOCUMENT_ROOT'];
+                        echo <<<data
+                            <div class="btn-group">
+                            <button type="button" class="btn btn-outline-dark shadow-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                   
+                             $_SESSION[uName]
 
-               
-                    <button type="button" class="btn btn-outline-success shadow-none me-lg-2 me-3" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Logg inn
-                    </button>
-                    <button type="button" class="btn btn-outline-warning shadow-none" data-bs-toggle="modal" data-bs-target="#registerModal">
-                        Register
-                    </button>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-lg-end">
+                                <li><a class="dropdown-item" href="bookings.php">Bookings</a></li>
+                                <li><a class="dropdown-item" href="loggut.php">Logg ut</a></li>
+                                
+                            </ul>
+                            </div>
+                        data;
+                    } else {
+
+
+                        echo <<<data
+                                <button type="button" class="btn btn-outline-success shadow-none me-lg-2 me-3" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                Logg inn
+                            </button>
+                            <button type="button" class="btn btn-outline-warning shadow-none" data-bs-toggle="modal" data-bs-target="#registerModal">
+                                Register
+                            </button>
+                        data;
+                    }
+
+
+
+
+
+
+                    ?>
+
+
+
+
                 </div>
             </div>
         </div>
@@ -69,11 +101,15 @@
 
     ?>
 
-
-    <!-- Bootstrap ve jQuery -->
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 
 </html>

@@ -8,7 +8,7 @@
 
             <h3 class="h-font fw-bold fs-3 mb-2"> <?php echo $instillinger_r['site_title'] ?></h3>
 
-            <p <?php echo $instillinger_r['site_om'] ?> >
+            <p <?php echo $instillinger_r['site_om'] ?>>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, mollitia dignissimos perspiciatis nam dolor delectus in qui eaque itaque amet? </p>
         </div>
 
@@ -119,6 +119,7 @@
         xhr.open("POST", "../../Controllers/ajax/login_register.php", true);
 
 
+
         xhr.onload = function() {
 
             console.log(this.responseText);
@@ -132,7 +133,7 @@
             } else if (this.responseText == 'telefon_exists') {
                 alert('danger', 'Telefonnummeret er allerede i bruk');
 
-            }  else if (this.responseText == 'mail_failed') {
+            } else if (this.responseText == 'mail_failed') {
                 alert('danger', 'Feil ved sending av epost');
 
             } else if (this.responseText == 'mail_sent') {
@@ -152,16 +153,16 @@
     });
 
 
-  let login_form = document.getElementById('login-form');
+    let login_form = document.getElementById('login-form');
 
 
-  login_form.addEventListener('submit', function(e) {
+    login_form.addEventListener('submit', function(e) {
         e.preventDefault();
         let data = new FormData();
 
         data.append('email_mob', login_form.elements['email_mob'].value);
         data.append('pass', login_form.elements['pass'].value);
-        data.append('login', '');   
+        data.append('login', '');
 
         var myModal = document.getElementById('loginModal');
         var myModal = bootstrap.Modal.getInstance(myModal);
@@ -170,21 +171,20 @@
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "../../Controllers/ajax/login_register.php", true);
 
-
         xhr.onload = function() {
 
             if (this.responseText == 'inv_email_mob') {
                 alert('danger', 'Invalid email or mobile number');
 
             } else if (this.responseText == 'not_verified') {
-                alert('danger', 'Email is not verified');
+                alert('danger', 'Email is not_verified');
 
-            }  else if (this.responseText == 'inactive') {
+            } else if (this.responseText == 'inactive') {
                 alert('danger', 'Account is blocked Please contact admin');
 
             } else if (this.responseText == 'invalid_pass') {
                 alert('success', 'Invalid password');
-        
+
             } else {
                 window.location = window.location.pathname;
             }
@@ -196,8 +196,61 @@
 
     });
 
+    let forgot_form = document.getElementById('forgot-form');
+
+    forgot_form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        let data = new FormData();
+
+        data.append('email', forgot_form.elements['email'].value);
+        data.append('forgot_pass', '');
+
+
+        var myModal = document.getElementById('forgotModal');
+        var myModal = bootstrap.Modal.getInstance(myModal);
+        myModal.hide();
+
+        let xhr = new XMLHttpRequest();
+        xhr.open("POST", "../../Controllers/ajax/login_register.php", true);
+
+         xhr.onprogress = function() {
+            alert('success', 'Sending email to reset password');
+
+
+
+        xhr.onload = function() {
+
+            if (this.responseText == 'inv_email') {
+                alert('danger', 'Invalid email');
+
+            } else if (this.responseText == 'not_verified') {
+                alert('danger', 'Email is not verified Please verify your email');
+
+            } else if (this.responseText == 'inactive') {
+                alert('danger', 'Account is blocked Please contact admin');
+
+            } else if (this.responseText == 'mail_failed') {
+                alert('danger', 'Cannot send email');
+
+            } else if (this.responseText == 'upd_failed') {
+                alert('danger', 'Account recovery failed'); 
+
+            }  
+            else {
+                alert('success', 'Email sent to reset password');
+                forgot_form.reset();
+            }
+
+
+        }
+        xhr.send(data);
+
+
+    });
+
+
 
 
     setActive();
-
 </script>
