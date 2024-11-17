@@ -106,25 +106,25 @@
     <div class="modal-content">
       <form id="forgot-form">
         <div class="modal-header">
-           <h4 class="modal-title d-flex align-items-center">
-          <i class="bi bi-person-circle fs-3 me-2"></i>Glemt password
+          <h4 class="modal-title d-flex align-items-center">
+            <i class="bi bi-person-circle fs-3 me-2"></i>Glemt password
           </h4>
         </div>
         <div class="modal-body">
-        <span class="badge text-bg-light text-dark mb-3 text-wrap lh-base">Note: A link will be sent to your email to reset your password</span>
+          <span class="badge text-bg-light text-dark mb-3 text-wrap lh-base">Note: A link will be sent to your email to reset your password</span>
           <div class="mb-4">
             <label class="form-label">Email</label>
             <input type="email" name="email" required class="form-control shadow-none">
-       
-         
-          <div class="mb-2 text-end">
-           
-            <button type="button" class="btn shadow-none p- me-2" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">
-              Kanseller
-            </button>
-            <button type="submit" class="btn btn-dark shadow-none">Send link</button>
+
+
+            <div class="mb-2 text-end">
+
+              <button type="button" class="btn shadow-none p- me-2" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">
+                Kanseller
+              </button>
+              <button type="submit" class="btn btn-dark shadow-none">Send link</button>
+            </div>
           </div>
-        </div>
       </form>
     </div>
   </div>

@@ -216,7 +216,7 @@
 
          xhr.onprogress = function() {
             alert('success', 'Sending email to reset password');
-
+        }
 
 
         xhr.onload = function() {
@@ -246,7 +246,7 @@
         }
         xhr.send(data);
 
-
+      
     });
 
 

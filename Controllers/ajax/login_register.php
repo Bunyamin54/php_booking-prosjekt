@@ -4,6 +4,9 @@
 require('../Helpers/Utils.php');
 require('../Config/Database.php');
 require('../sendgrid/sendgrid.php');
+
+
+
 date_default_timezone_set('Europe/Oslo');
 
 
@@ -176,11 +179,37 @@ if (isset($_POST['forgot_pass'])) {
         } else {
           echo 'mail_failed';
         }
-
-
-
       }
     }
   }
 }
+
+
+
+if (isset($_POST['recover_user'])) {
+
+  $data = filteration($_POST);
+
+  $enc_pass = password_hash($data['pass'], PASSWORD_BCRYPT);
+
+  $query = "UPDATE `user_cred` SET `password` = ?,`token` = ?, `t_expire` = ? WHERE `email` = ? AND `token` = ?";
+
+
+
+  $values = [$enc_pass, 'null', 'null', $data['email'], $data['token']];
+
+
+  if (update($query, $values, "sssss")) {
+    echo 'success';
+  } else {
+    echo 'upd_failed';
+  }
+}
+
+
+
+
+
+
+
 ?>
