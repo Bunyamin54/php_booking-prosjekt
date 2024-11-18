@@ -90,7 +90,7 @@ if (isset($_POST['register'])) {
   $token = bin2hex(random_bytes(16));
 
   if (!send_mail($data['email'], $token, "email_confirmation")) {
-    echo 'mail_failed';
+    echo 'email_failed';
     exit;
   }
 
@@ -101,7 +101,7 @@ if (isset($_POST['register'])) {
 
   $values = [$data['name'], $data['email'], $data['telefon'], $data['adress'],  $data['post_num'], $data['dob'], $enc_pass, $token];
 
-  if (insert($query, $values, "ssssssss")) {
+  if (insert($query, $values, 'ssssssss')) {
     echo 'success';
   } else {
     echo 'failed';

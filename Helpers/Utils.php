@@ -31,7 +31,7 @@ define('ROMS_FOLDER', 'roms/');
 
  // sendgrid funksjoner 
 
-   define('SENDGRID_API_KEY',"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") ; 
+   define('SENDGRID_API_KEY',"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") ; 
    define('SENDGRID_EMAIL',"bunyaming@uia.com") ; 
    define('SENDGRID_NAME',"hotelprosjekt") ; 
 
