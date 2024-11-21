@@ -42,7 +42,7 @@
 <!--  //? Added registration modal with form fields for user details -->
 <!-- //*  Register Modal -->
 
-<div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+<div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="inert">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <form id="register-form">
@@ -101,7 +101,7 @@
 </div>
 
 
-<div class="modal fade" id="forgotModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+<div class="modal fade" id="forgotModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="inert">
   <div class="modal-dialog">
     <div class="modal-content">
       <form id="forgot-form">

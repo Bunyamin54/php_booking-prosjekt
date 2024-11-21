@@ -1,4 +1,3 @@
-<!-- <?php phpinfo(); ?> -->
 
 
 <!doctype html>
@@ -44,7 +43,7 @@
 
   <!-- //?  password reset modal and code  -->
 
-  <div class="modal fade" id="recoveryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal fade" id="recoveryModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="inert">
     <div class="modal-dialog">
       <div class="modal-content">
         <form id="recovery-form">
