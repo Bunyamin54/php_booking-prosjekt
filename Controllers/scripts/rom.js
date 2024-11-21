@@ -66,7 +66,7 @@ function add_rom() {
 function get_all_rom() {
 
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "ajax/rom.php", true);
+  xhr.open("POST", "./ajax/rom.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
   xhr.onload = function() {

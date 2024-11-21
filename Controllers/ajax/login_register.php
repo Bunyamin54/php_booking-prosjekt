@@ -1,58 +1,53 @@
 
 <?php
 
-require('../Helpers/Utils.php');
-require('../Config/Database.php');
-require('../sendgrid/sendgrid.php');
+require('../../Helpers/Utils.php');
+require('../../Config/Database.php');
+require('../../sendBlue/send_email.php');
 
 
 
 date_default_timezone_set('Europe/Oslo');
 
 
-// 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
+use Brevo\Client\Api\TransactionalEmailsApi;
+use Brevo\Client\Configuration;
+use Brevo\Client\Model\SendSmtpEmail;
 
 function send_mail($uemail, $token, $type)
 {
+  // Brevo API yapılandırmasını başlat
+  $config = Configuration::getDefaultConfiguration()->setApiKey('api-key', BREVO_API_KEY);
+  $apiInstance = new TransactionalEmailsApi(new GuzzleHttp\Client(), $config);
 
   if ($type == "email_confirmation") {
-
     $page = "index.php";
     $subject = "Account Confirmation";
     $content = "confirm your email";
-  } else if ($type == "account_recovery") {
-
+  } elseif ($type == "account_recovery") {
     $page = "reset_password.php";
     $subject = "Account Reset Link";
     $content = "reset your password";
   }
 
-
-  $email = new \SendGrid\Mail\Mail();
-  $email->setFrom("SENDGRID_EMAIL", "SENDGRID_NAME");
-  $email->setSubject("$subject");
-
-  $email->addTo($uemail);
-
-
-  $email->addContent(
-    "text/html",
-    "
-         Click the link to $content : <br>
-          <a href=' " . SITE_URL . "$page?$type&email=$uemail&$token=$token" . "'>        
-          Confirm Email       
-          </a>     
-         "
-  );
-  $sendgrid = new \SendGrid(SENDGRID_API_KEY);
-
+  // E-posta içeriğini ayarla
+  $sendSmtpEmail = new SendSmtpEmail([
+    'to' => [
+      ['email' => $uemail, 'name' => 'User Name']
+    ],
+    'sender' => ['email' => BREVO_EMAIL, 'name' => BREVO_NAME],
+    'subject' => $subject,
+    'htmlContent' => "
+            Click the link to $content : <br>
+            <a href='" . SITE_URL . "$page?$type&email=$uemail&$token=$token'>Confirm Email</a>
+        "
+  ]);
 
   try {
-    $sendgrid->send($email);
-
-    return 1;
+    $apiInstance->sendTransacEmail($sendSmtpEmail);
+    return 1; // Başarılı gönderim
   } catch (Exception $e) {
-    return 0;
+    return 0; // Hata durumunda
   }
 }
 
@@ -89,10 +84,19 @@ if (isset($_POST['register'])) {
 
   $token = bin2hex(random_bytes(16));
 
-  if (!send_mail($data['email'], $token, "email_confirmation")) {
+  $subject = "Account Confirmation";
+  $html_content = "
+    Click the link to confirm your email: <br>
+    <a href='" . SITE_URL . "index.php?email_confirmation&email={$data['email']}&token=$token'>Confirm Email</a>
+";
+$result = send_mail($data['email'], $token, 'email_confirmation');
+
+if ($result['status'] !== 'success') {
     echo 'email_failed';
+    error_log("Email Error: " . $result['message']);
     exit;
-  }
+}
+
 
   $enc_pass = password_hash($data['pass'], PASSWORD_BCRYPT);
 
@@ -171,10 +175,11 @@ if (isset($_POST['forgot_pass'])) {
       } else {
 
         $date = date('Y-m-d');
-        $query = mysqli_query($con, "UPDATE `user_cred` SET `token` = '$token= ?, `t_expire` = '$date' 
+        $query = mysqli_query($con, "UPDATE `user_cred` SET `token` = '$token', `t_expire` = '$date' 
         WHERE `id`='$u_fetch[id]'");
 
         if ($query) {
+          error_log("SQL Error: " . mysqli_error($con));
           echo 'mail_sent';
         } else {
           echo 'mail_failed';

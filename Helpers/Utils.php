@@ -29,12 +29,12 @@ define('ROMS_FOLDER', 'roms/');
 //  /Applications/XAMPP/xamppfiles/htdocs
 
 
- // sendgrid funksjoner 
 
-   define('SENDGRID_API_KEY',"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") ; 
-   define('SENDGRID_EMAIL',"bunyaming@uia.com") ; 
-   define('SENDGRID_NAME',"hotelprosjekt") ; 
 
+ define('BREVO_API_KEY', 'xkeysib-e8fc7efc4aba98bad48e0038baf9584c54e8ae8d277452276825374265b7cd0c');
+ define('BREVO_EMAIL', 'bunyaming@uia.com');
+ define('BREVO_NAME', 'hotelprosjekt');
+ 
 
 
 // ? Funksjon for å sjekke om administratoren er logget inn 
